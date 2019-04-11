@@ -63,3 +63,16 @@ C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin
 C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
 C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
 C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb

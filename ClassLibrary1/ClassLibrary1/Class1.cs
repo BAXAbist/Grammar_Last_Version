@@ -237,7 +237,7 @@ namespace ClassLibrary1
             foreach (char c in nonterms)
                 avaliable_nonterms.Add(c);
             HashSet<char> used_nonterms = new HashSet<char>();
-            //генерируем правило для стартового символа
+            //генерируем правило для стартового символa
             string generated_rule = nonterms[0] + "-";
             for (int i = 0; i < ruleCounts - 1; i++)
             {
@@ -401,3 +401,4 @@ namespace ClassLibrary1
         }
     }
 }
+//somebody once told me
