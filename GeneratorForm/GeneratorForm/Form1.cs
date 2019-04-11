@@ -249,9 +249,9 @@ namespace GeneratorForm
 
         private void Chain_Builder_Button_SaveFile_Click(object sender, EventArgs e)
         {
-            if (Chain_Builder_SaveFile.ShowDialog() == DialogResult.OK)
+            if (SaveFile.ShowDialog() == DialogResult.OK)
             {
-                Stream file = Chain_Builder_SaveFile.OpenFile();
+                Stream file = SaveFile.OpenFile();
                 StreamWriter sw = new StreamWriter(file);
                 sw.WriteLine(Chain_Builder_RichBox_Result.Text);
                 sw.Close();

@@ -50,3 +50,16 @@ C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorF
 C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
 C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
 C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
