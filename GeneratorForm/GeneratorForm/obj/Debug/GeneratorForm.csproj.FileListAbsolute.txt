@@ -1,0 +1,52 @@
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+C:\Users\Влад\source\repos\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+G:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+G:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+G:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+G:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+G:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+G:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+E:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+E:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+E:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+E:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+E:\1Проги\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+E:\1Проги\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe.config
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.exe
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\bin\Debug\GeneratorForm.pdb
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.dll
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\bin\Debug\ClassLibrary1.pdb
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csprojAssemblyReference.cache
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.GeneratorForm.resources
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Properties.Resources.resources
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.GenerateResource.cache
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CoreCompileInputs.cache
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
+C:\Users\tolik\OneDrive\Desktop\новая версия\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
