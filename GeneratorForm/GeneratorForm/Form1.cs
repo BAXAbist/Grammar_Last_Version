@@ -18,7 +18,7 @@ namespace GeneratorForm
         private List<string> degradated_grammatic;
         private int gramm_type = 0, gramm_rules_count = 0, gramm_rule_lenght = 0, gramm_nonterms_count = 0;
         private bool gramm_left_or_right = false;
-
+        //часть с окном генерации грамматик
         public GeneratorForm()
         {
             InitializeComponent();
@@ -86,7 +86,7 @@ namespace GeneratorForm
             gramm_nonterms_count = Convert.ToInt32(nonterms_count_edit.Text);
             if (!set_rules_dinamic.Checked)
             {
-                gramm_rules_count = Convert.ToInt32(rules_fromcount_edit.Text);
+                gramm_rules_count = Convert.ToInt32(rules_tocount_edit.Text);
                 gramm_rule_lenght = Convert.ToInt32(rule_tolength_edit.Text);
             }
             else
@@ -234,6 +234,7 @@ namespace GeneratorForm
             to_label2.Hide();
             from_label1.Hide();
             from_label2.Hide();
+            set_rules_static.Checked = true;
             set_rules_dinamic.Hide();
         }
 
