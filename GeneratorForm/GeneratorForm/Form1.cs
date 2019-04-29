@@ -141,7 +141,9 @@ namespace GeneratorForm
                 sw.Close();
                 file.Close();
                 Chain_Builder_RichBox_Folder.Text = dial.FileName;
+                Chain_Builder_from_Folder_in_TextBox();
                 Check_Grammar_RichBox_Folder.Text = dial.FileName;
+                Check_Grammar_from_Folder_in_TextBox();
             }
         }
 
@@ -322,6 +324,7 @@ namespace GeneratorForm
 
         private void Chain_Builder_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
+            Chain_Builder_RichBox_EnterManual.Clear();
             Chain_Builder_RichBox_EnterManual.Visible = Chain_Builder_Check_EnterManual.Checked;
         }
 
@@ -476,6 +479,12 @@ namespace GeneratorForm
             return true;
         }
 
+        private void Check_Grammar_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
+        {
+            Check_Grammar_RichBox_EnterManual.Clear();
+            Check_Grammar_RichBox_EnterManual.Visible = Check_Grammar_Check_EnterManual.Checked;
+        }
+
         private void Check_Grammar_Button_Folder_Click(object sender, EventArgs e)
         {
             if (OpenFile.ShowDialog() == DialogResult.OK)
@@ -486,6 +495,21 @@ namespace GeneratorForm
                 StreamReader reader = new StreamReader(f);
                 Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
             }
+        }
+
+        public void Check_Grammar_from_Folder_in_TextBox()
+        {
+            Check_Grammar_RichBox_EnterManual.Visible = true;
+            FileStream f = new FileStream(Check_Grammar_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(f);
+            Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
+        }
+        public void Chain_Builder_from_Folder_in_TextBox()
+        {
+            Chain_Builder_RichBox_EnterManual.Visible = true;
+            FileStream f = new FileStream(Chain_Builder_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(f);
+            Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
         }
     }
 }

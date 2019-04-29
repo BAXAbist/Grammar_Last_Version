@@ -464,6 +464,7 @@
             this.Chain_Builder_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
             this.Chain_Builder_RichBox_EnterManual.TabIndex = 7;
             this.Chain_Builder_RichBox_EnterManual.Text = "";
+            this.Chain_Builder_RichBox_EnterManual.Visible = false;
             // 
             // Chain_Builder_RichBox_Result
             // 
@@ -560,6 +561,7 @@
             this.Check_Grammar_Check_EnterManual.TabIndex = 6;
             this.Check_Grammar_Check_EnterManual.Text = "Ввести вручную";
             this.Check_Grammar_Check_EnterManual.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Check_EnterManual.CheckedChanged += new System.EventHandler(this.Check_Grammar_Check_EnterManual_CheckedChanged);
             // 
             // Check_Grammar_RichBox_EnterManual
             // 
@@ -569,6 +571,7 @@
             this.Check_Grammar_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
             this.Check_Grammar_RichBox_EnterManual.TabIndex = 5;
             this.Check_Grammar_RichBox_EnterManual.Text = "";
+            this.Check_Grammar_RichBox_EnterManual.Visible = false;
             // 
             // Check_Grammar_RichBox_Result
             // 
