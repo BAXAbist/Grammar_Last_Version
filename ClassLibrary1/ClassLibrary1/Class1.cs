@@ -340,94 +340,105 @@ namespace ClassLibrary1
         // КЗ - не лезь оно тебя сожрет
         private bool ContextDepend(out List<string> generated_grammatic)
         {
-            string GenerateDependValue(int length, int contextA, int contextB, bool terminal)
+            string GenerateDependValue(int length, bool terminal)
             {
                 string result = "";
                 if (!terminal)
                 {
-                    int nonterms_count = rand.Next(1, length);
-                    HashSet<int> nonterm_Indexes = new HashSet<int>();
-                    int i = 1;
-                    do
+                    if (nonterms.Length > 1)
                     {
-                        if (nonterm_Indexes.Add(rand.Next(0, length - 1)))
-                            i++;
-                    } while (i < nonterms_count);
-                    for (int j = 0; j < length; j++)
-                    {
-                        if (nonterm_Indexes.Contains(j))
-                            result += nonterms[rand.Next(1, nonterms.Length)];
-                        else
-                            result += terms[rand.Next(0, terms.Length)];
+                        int nonterms_count = rand.Next(2, length);
+                        HashSet<int> nonterm_Indexes = new HashSet<int>();
+                        int i = 1;
+                        do
+                        {
+                            if (nonterm_Indexes.Add(rand.Next(0, length - 1)))
+                                i++;
+                        } while (i < nonterms_count);
+                        for (int j = 0; j < length; j++)
+                        {
+                            if (nonterm_Indexes.Contains(j))
+                                result += nonterms[rand.Next(1, nonterms.Length)];
+                            else
+                                result += terms[rand.Next(0, terms.Length)];
+                        }
                     }
+                    else
+                        for(int i=0;i<ruleLength;i++)
+                            result+= terms[rand.Next(0, terms.Length)];
                 }
                 else
                 {
                     for (int j = 0; j < length; j++)
                         result += terms[rand.Next(0, terms.Length)];
                 }
-                if (contextA != -1)
-                    result = contextes[contextA] + result;
-                if (contextB != -1)
-                    result += contextes[contextB];
                 return result;
             }
-            int all_count = rand.Next(nonterms.Length,nonterms.Length+contextes.Length);
             generated_grammatic = new List<string>();
-            HashSet<char> avaliable_nonterms = new HashSet<char>();
+            List<string> avaliable_list = new List<string>();
+            List<string> used_list = new List<string>();
+            HashSet<string> used_nonterms = new HashSet<string>(used_list);
             foreach (char c in nonterms)
-                avaliable_nonterms.Add(c);
-            HashSet<char> used_nonterms = new HashSet<char>();
-            //генерируем правило для стартового символа
-            string generated_rule =nonterms[0] + "-";
-            for (int i = 0; i < ruleCounts - 1; i++)
+                avaliable_list.Add(Convert.ToString(c));
+            avaliable_list.Remove(avaliable_list[0]);
+            List<string> contexted_list = new List<string>();
+            for (int i = 0; i < avaliable_list.Count; i++)
             {
-                string value = GenerateDependValue(ruleLength, -1, -1, false);
-                for (int j = 0; j < value.Length; j++)
-                    if (char.IsUpper(value[j]))
-                        used_nonterms.Add(value[j]);
+                int contxA, contxB;
+                contxA = rand.Next(0, contextes.Length);
+                contxB = rand.Next(0, contextes.Length);
+                string key = contextes[contxA] + avaliable_list[i] + contextes[contxB];
+                contexted_list.Add(key);
+            }
+            string generated_rule = nonterms[0] + "-";
+            for(int i=0;i<ruleCounts-1;i++)
+            {
+                string value = GenerateDependValue(ruleLength, false);
+                foreach (char k in value)
+                    if (char.IsUpper(k))
+                        used_nonterms.Add(Convert.ToString(k));
                 generated_rule += value + "|";
             }
-            generated_rule += GenerateDependValue(ruleLength, -1, -1, true);
-            generated_rule.Remove(generated_rule.Length - 1);
+            generated_rule+=GenerateDependValue(ruleLength, true);
             generated_grammatic.Add(generated_rule);
-            //пытаемся сгенерировать правила для всех уже использованных символов
-            List<char> list_of_used = new List<char>(used_nonterms);
-            list_of_used.Remove(nonterms[0]);
-            int k = 0, A, B;
-            HashSet<string> check_keys = new HashSet<string>();
-            while (k < list_of_used.Count)
+            if (nonterms.Length > 1)
             {
-                for (int r = 1; r <= all_count % avaliable_nonterms.Count; r++)
+                used_list = new List<string>(used_nonterms);
+                int f = 0;
+                while (f < used_list.Count)
                 {
-                    do
+                    used_nonterms.Clear();
+                    used_nonterms = new HashSet<string>(used_list);
+                    int key_index = avaliable_list.IndexOf(used_list[f]);
+                    generated_rule = contexted_list[key_index];
+                    string[] contx = generated_rule.Split(Convert.ToChar(avaliable_list[key_index]));
+                    generated_rule += "-";
+                    for (int i = 0; i < ruleCounts; i++)
                     {
-                        A = rand.Next(0, contextes.Length);
-                        B = rand.Next(0, contextes.Length);
-                        generated_rule = contextes[A] + list_of_used[k] + contextes[B] + "-";
-                    } while (!check_keys.Add(generated_rule));
-                    for (int i = 0; i < ruleCounts - 1; i++)
-                    {
-                        string value = GenerateDependValue(ruleLength, A, B, false);
-                        for (int j = contextes[A].Length; j < value.Length - contextes[B].Length; j++)
-                            if (char.IsUpper(value[j]))
-                                used_nonterms.Add(value[j]);
-                        generated_rule += value + "|";
+                        string value = GenerateDependValue(ruleLength, false);
+                        foreach (char k in value)
+                            if (char.IsUpper(k))
+                                used_nonterms.Add(Convert.ToString(k));
+                        generated_rule += contx[0] + value + contx[1] + "|";
                     }
-                    generated_rule += GenerateDependValue(ruleLength, A, B, true);
-                    generated_rule.Remove(generated_rule.Length - 1);
+                    generated_rule += contx[0] + GenerateDependValue(ruleLength, true) + contx[1];
                     generated_grammatic.Add(generated_rule);
-                    list_of_used = new List<char>(used_nonterms);
+                    used_list.Clear();
+                    used_list = new List<string>(used_nonterms);
+                    f++;
                 }
-                k++;
+                HashSet<string> avaliable_nonterms = new HashSet<string>(avaliable_list);
+                if (!used_nonterms.SetEquals(avaliable_nonterms))
+                {
+                    used_list.Clear();
+                    avaliable_nonterms.Clear();
+                    avaliable_list.Clear();
+                    used_nonterms.Clear();
+                    contexted_list.Clear();
+                    generated_grammatic.Clear();
+                    ContextDepend(out generated_grammatic);
+                }
             }
-            avaliable_nonterms.Remove(nonterms[0]);
-            if (!used_nonterms.SetEquals(avaliable_nonterms))
-            {
-                generated_grammatic.Clear();
-                ContextFree(out generated_grammatic);
-            }
-            check_keys.Clear();
             return true;
         }
 
