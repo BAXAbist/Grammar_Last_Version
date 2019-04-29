@@ -14,6 +14,7 @@ namespace GeneratorForm
 {
     public partial class GeneratorForm : Form
     {
+        Help_Form f = new Help_Form();
         private Grammatic gramm;
         private List<string> degradated_grammatic;
         private int gramm_type = 0, gramm_rules_count = 0, gramm_rule_lenght = 0, gramm_nonterms_count = 0;
@@ -217,11 +218,6 @@ namespace GeneratorForm
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             this.gramm_type = 1;
@@ -237,7 +233,14 @@ namespace GeneratorForm
             set_rules_dinamic.Hide();
         }
 
-//Все функции для страницы с составителем цепочек
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            string TextName = "../../Text1.txt";
+            f.Help_Form_Changed(TextName);
+            f.Show();
+        }
+
+        //Все функции для страницы с составителем цепочек
 
         SaveFileDialog SaveFile = new SaveFileDialog
         {
@@ -428,6 +431,20 @@ namespace GeneratorForm
                 }
             }
             return true;
+        }
+
+        private void Chain_Builder_Button_Help_Click(object sender, EventArgs e)
+        {
+            string TextName = "../../Text2.txt";
+            f.Help_Form_Changed(TextName);
+            f.Show();
+        }
+
+        private void CheckBox_Button_Help_Click(object sender, EventArgs e)
+        {
+            string TextName = "../../Text3.txt";
+            f.Help_Form_Changed(TextName);
+            f.Show();
         }
 
         static bool Check_Context_Free(string key)

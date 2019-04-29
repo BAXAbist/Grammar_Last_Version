@@ -407,6 +407,7 @@
             this.buttonHelp.TabIndex = 7;
             this.buttonHelp.Text = "Помощь/Help";
             this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // tabControl1
             // 
@@ -522,6 +523,7 @@
             this.Chain_Builder_Button_Help.TabIndex = 1;
             this.Chain_Builder_Button_Help.Text = "Помощь/Help";
             this.Chain_Builder_Button_Help.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Help.Click += new System.EventHandler(this.Chain_Builder_Button_Help_Click);
             // 
             // Chain_Builder_Button_Folder
             // 
@@ -603,6 +605,7 @@
             this.CheckBox_Button_Help.TabIndex = 1;
             this.CheckBox_Button_Help.Text = "Помощь/Help";
             this.CheckBox_Button_Help.UseVisualStyleBackColor = true;
+            this.CheckBox_Button_Help.Click += new System.EventHandler(this.CheckBox_Button_Help_Click);
             // 
             // Check_Grammar_Button_Check
             // 
@@ -627,7 +630,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GeneratorForm";
             this.Text = "Генератор";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.grammatic_type.ResumeLayout(false);
             this.grammatic_type.PerformLayout();
             this.grammatic_nonterms.ResumeLayout(false);

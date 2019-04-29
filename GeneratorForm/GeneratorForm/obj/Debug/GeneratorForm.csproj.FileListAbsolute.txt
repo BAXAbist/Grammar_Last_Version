@@ -76,3 +76,4 @@ C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\Gener
 C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.csproj.CopyComplete
 C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.exe
 C:\Users\Влад\Source\Repos\BAXAbist\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.pdb
+C:\Users\tolik\source\repos\Grammar_Last_Version\GeneratorForm\GeneratorForm\obj\Debug\GeneratorForm.Help_Form.resources
