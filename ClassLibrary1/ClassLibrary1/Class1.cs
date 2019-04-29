@@ -21,6 +21,7 @@ namespace ClassLibrary1
             string new_upper_alph = "S";
             HashSet<int> Indexes = new HashSet<int>();
             int j = 0;
+            if(nontermsCount>1)
             do
             {
                 if (Indexes.Add(rand.Next(0, nonterms.Length)))
@@ -237,29 +238,66 @@ namespace ClassLibrary1
             foreach (char c in nonterms)
                 avaliable_nonterms.Add(c);
             HashSet<char> used_nonterms = new HashSet<char>();
-            //генерируем правило для стартового символa
-            string generated_rule = nonterms[0] + "-";
-            for (int i = 0; i < ruleCounts - 1; i++)
-            {
-                string value = GenerateValue(ruleLength, false);
-                for (int j = 0; j < value.Length; j++)
-                    if (char.IsUpper(value[j]))
-                        used_nonterms.Add(value[j]);
-                generated_rule += value + "|";
-            }
-            generated_rule += GenerateValue(ruleLength, true);
-            generated_rule.Remove(generated_rule.Length - 1);
-            generated_grammatic.Add(generated_rule);
-            //пытаемся сгенерировать правила для всех уже использованных символов
-            List<char> list_of_used = new List<char>(used_nonterms);
-            list_of_used.Remove(nonterms[0]);
+            string generated_rule = "";
+            string value = "";
+            List<char> list_of_used;
             int k = 0;
-            while (k < list_of_used.Count)
+            //генерируем правило для стартового символa
+            if (ruleCounts == 1)
             {
-                generated_rule = list_of_used[k] + "-";
+                if (avaliable_nonterms.Count == 1)
+                {
+                    generated_rule = nonterms[0] + "-" + GenerateValue(ruleLength, true);
+                    generated_grammatic.Add(generated_rule);
+                    return true;
+                }
+                else
+                {
+                    generated_rule = nonterms[0] + "-";
+                    value = GenerateValue(ruleLength, false);
+                    foreach (char c in value)
+                        if (char.IsUpper(c))
+                            used_nonterms.Add(c);
+                    generated_rule += value;
+                    generated_grammatic.Add(generated_rule);
+                    list_of_used = new List<char>(used_nonterms);
+                    k = 0;
+                    while (k < list_of_used.Count)
+                    {
+                        generated_rule = list_of_used[k] + "-";
+                        for (int i = 0; i < ruleCounts; i++)
+                        {
+                            value = GenerateValue(ruleLength, false);
+                            for (int j = 0; j < value.Length; j++)
+                                if (char.IsUpper(value[j]))
+                                    used_nonterms.Add(value[j]);
+                            generated_rule += value;
+                        }
+                        if (k == list_of_used.Count)
+                        {
+                            generated_rule += "|" + GenerateValue(ruleLength, true);
+                        }
+                        generated_grammatic.Add(generated_rule);
+                        list_of_used = new List<char>(used_nonterms);
+                        k++;
+                    }
+                    generated_grammatic[generated_grammatic.Count - 1] += "|" + GenerateValue(ruleLength, true);
+                    avaliable_nonterms.Remove(nonterms[0]);
+                    if (!used_nonterms.SetEquals(avaliable_nonterms))
+                    {
+                        generated_grammatic.Clear();
+                        Automatic(out generated_grammatic);
+                    }
+                    return true;
+                }
+
+            }
+            else
+            {
+                generated_rule = nonterms[0] + "-";
                 for (int i = 0; i < ruleCounts - 1; i++)
                 {
-                    string value = GenerateValue(ruleLength, false);
+                    value = GenerateValue(ruleLength, false);
                     for (int j = 0; j < value.Length; j++)
                         if (char.IsUpper(value[j]))
                             used_nonterms.Add(value[j]);
@@ -268,16 +306,35 @@ namespace ClassLibrary1
                 generated_rule += GenerateValue(ruleLength, true);
                 generated_rule.Remove(generated_rule.Length - 1);
                 generated_grammatic.Add(generated_rule);
+                //пытаемся сгенерировать правила для всех уже использованных символов
                 list_of_used = new List<char>(used_nonterms);
-                k++;
+                list_of_used.Remove(nonterms[0]);
+                k = 0;
+                while (k < list_of_used.Count)
+                {
+                    generated_rule = list_of_used[k] + "-";
+                    for (int i = 0; i < ruleCounts - 1; i++)
+                    {
+                        value = GenerateValue(ruleLength, false);
+                        for (int j = 0; j < value.Length; j++)
+                            if (char.IsUpper(value[j]))
+                                used_nonterms.Add(value[j]);
+                        generated_rule += value + "|";
+                    }
+                    generated_rule += GenerateValue(ruleLength, true);
+                    generated_rule.Remove(generated_rule.Length - 1);
+                    generated_grammatic.Add(generated_rule);
+                    list_of_used = new List<char>(used_nonterms);
+                    k++;
+                }
+                avaliable_nonterms.Remove(nonterms[0]);
+                if (!used_nonterms.SetEquals(avaliable_nonterms))
+                {
+                    generated_grammatic.Clear();
+                    ContextFree(out generated_grammatic);
+                }
+                return true;
             }
-            avaliable_nonterms.Remove(nonterms[0]);
-            if (!used_nonterms.SetEquals(avaliable_nonterms))
-            {
-                generated_grammatic.Clear();
-                ContextFree(out generated_grammatic);
-            }
-            return true;
         }
 
         // КЗ - не лезь оно тебя сожрет
