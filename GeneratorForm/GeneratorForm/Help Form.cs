@@ -22,7 +22,7 @@ namespace GeneratorForm
         public void Help_Form_Changed(string TextName)
         {
             f = new FileStream(TextName, FileMode.Open, FileAccess.Read);
-            StreamReader str = new StreamReader(f);
+            StreamReader str = new StreamReader(f, Encoding.Default);
             Help_RichTextBox.Text = str.ReadToEnd();
         }
     }
