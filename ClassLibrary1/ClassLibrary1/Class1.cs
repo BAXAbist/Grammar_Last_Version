@@ -64,22 +64,44 @@ namespace ClassLibrary1
 
         public bool GenerateGrammatic(int type, out List<string> generated_grammatic)
         {
+            bool success = false;
             switch (type)
             {
                 case 1:
-                    return Automatic(out generated_grammatic);
+                    do
+                    {
+                        success = Automatic(out generated_grammatic);
+                    } while (!success);
+                    break;
+                    //return Automatic(out generated_grammatic);
                 case 2:
-                    return ContextFree(out generated_grammatic);
+                    do
+                    {
+                        success = ContextFree(out generated_grammatic);
+                    } while (!success);
+                    break;
+                    //return ContextFree(out generated_grammatic);
                 case 3:
-                    return ContextDepend(out generated_grammatic);
+                    do
+                    {
+                        success = ContextDepend(out generated_grammatic);
+                    } while (!success);
+                    break;
+                    //return ContextDepend(out generated_grammatic);
                 case 4:
-                    return Natural(out generated_grammatic);
+                    do
+                    {
+                        success = Natural(out generated_grammatic);
+                    } while (!success);
+                    break;
+                    //return Natural(out generated_grammatic);
                 default:
                     {
                         generated_grammatic = new List<string>();
                         return false;
                     }
             }
+            return success;
         }
 
         //Автоматная - разобратся с длинной и терминальными правилами
@@ -98,7 +120,12 @@ namespace ClassLibrary1
                         result += "" + term + nonterm;
                 }
                 else
-                    result += "" + terms[rand.Next(0, terms.Length)] + terms[rand.Next(0, terms.Length)];
+                {
+                    for(int i=0;i<length;i++)
+                    {
+                        result += "" + terms[rand.Next(0, terms.Length)];
+                    }
+                }
                 return result;
             }
             ruleLength = 2;
@@ -115,7 +142,7 @@ namespace ClassLibrary1
             {
                 if (avaliable_nonterms.Count == 1)
                 {
-                    generated_rule = nonterms[0] + "-" + GenerateAutomaticValue(ruleLength, automatRuleType, true);
+                    generated_rule = nonterms[0] + "-" + GenerateAutomaticValue(1, automatRuleType, true);
                     generated_grammatic.Add(generated_rule);
                     return true;
                 }
@@ -143,20 +170,22 @@ namespace ClassLibrary1
                         }
                         if (k == list_of_used.Count)
                         {
-                            generated_rule += "|" + GenerateAutomaticValue(ruleLength, automatRuleType, true);
+                            generated_rule += "|" + GenerateAutomaticValue(1, automatRuleType, true);
                         }
                         generated_grammatic.Add(generated_rule);
                         list_of_used = new List<char>(used_nonterms);
                         k++;
                     }
-                    generated_grammatic[generated_grammatic.Count-1] += "|" + GenerateAutomaticValue(ruleLength, automatRuleType, true);
+                    generated_grammatic[generated_grammatic.Count-1] += "|" + GenerateAutomaticValue(1, automatRuleType, true);
                     avaliable_nonterms.Remove(nonterms[0]);
                     if (!used_nonterms.SetEquals(avaliable_nonterms))
                     {
-                        generated_grammatic.Clear();
-                        Automatic(out generated_grammatic);
+                        return false;
+                        //generated_grammatic.Clear();
+                        //Automatic(out generated_grammatic);
                     }
-                    return true;
+                    else
+                        return true;
                 }
             }
             else
@@ -170,7 +199,7 @@ namespace ClassLibrary1
                             used_nonterms.Add(c);
                     generated_rule += value + "|";
                 }
-                generated_rule += GenerateAutomaticValue(ruleLength, automatRuleType, true);
+                generated_rule += GenerateAutomaticValue(1, automatRuleType, true);
                 generated_rule.Remove(generated_rule.Length - 1);
                 generated_grammatic.Add(generated_rule);
                 list_of_used = new List<char>(used_nonterms);
@@ -186,7 +215,7 @@ namespace ClassLibrary1
                                 used_nonterms.Add(value[j]);
                         generated_rule += value + "|";
                     }
-                    generated_rule += GenerateAutomaticValue(ruleLength, automatRuleType, true);
+                    generated_rule += GenerateAutomaticValue(1, automatRuleType, true);
                     generated_rule.Remove(generated_rule.Length - 1);
                     generated_grammatic.Add(generated_rule);
                     list_of_used = new List<char>(used_nonterms);
@@ -195,10 +224,12 @@ namespace ClassLibrary1
                 avaliable_nonterms.Remove(nonterms[0]);
                 if (!used_nonterms.SetEquals(avaliable_nonterms))
                 {
-                    generated_grammatic.Clear();
-                    Automatic(out generated_grammatic);
+                    return false;
+                    //generated_grammatic.Clear();
+                    //Automatic(out generated_grammatic);
                 }
-                return true;
+                else
+                    return true;
             }
         }
 
@@ -285,10 +316,12 @@ namespace ClassLibrary1
                     avaliable_nonterms.Remove(nonterms[0]);
                     if (!used_nonterms.SetEquals(avaliable_nonterms))
                     {
-                        generated_grammatic.Clear();
-                        Automatic(out generated_grammatic);
+                        return false;
+                        //generated_grammatic.Clear();
+                        //Automatic(out generated_grammatic);
                     }
-                    return true;
+                    else
+                        return true;
                 }
 
             }
@@ -330,10 +363,12 @@ namespace ClassLibrary1
                 avaliable_nonterms.Remove(nonterms[0]);
                 if (!used_nonterms.SetEquals(avaliable_nonterms))
                 {
-                    generated_grammatic.Clear();
-                    ContextFree(out generated_grammatic);
+                    return false;
+                    //generated_grammatic.Clear();
+                    //ContextFree(out generated_grammatic);
                 }
-                return true;
+                else
+                    return true;
             }
         }
 
@@ -378,6 +413,7 @@ namespace ClassLibrary1
             List<string> avaliable_list = new List<string>();
             List<string> used_list = new List<string>();
             HashSet<string> used_nonterms = new HashSet<string>(used_list);
+            HashSet<string> avaliable_nonterms = new HashSet<string>(avaliable_list);
             foreach (char c in nonterms)
                 avaliable_list.Add(Convert.ToString(c));
             avaliable_list.Remove(avaliable_list[0]);
@@ -427,19 +463,22 @@ namespace ClassLibrary1
                     used_list = new List<string>(used_nonterms);
                     f++;
                 }
-                HashSet<string> avaliable_nonterms = new HashSet<string>(avaliable_list);
-                if (!used_nonterms.SetEquals(avaliable_nonterms))
-                {
-                    used_list.Clear();
-                    avaliable_nonterms.Clear();
-                    avaliable_list.Clear();
-                    used_nonterms.Clear();
-                    contexted_list.Clear();
-                    generated_grammatic.Clear();
-                    ContextDepend(out generated_grammatic);
-                }
+                avaliable_nonterms = new HashSet<string>(avaliable_list);
+                //if (!used_nonterms.SetEquals(avaliable_nonterms))
+                //{
+                //    used_list.Clear();
+                //    avaliable_nonterms.Clear();
+                //    avaliable_list.Clear();
+                //    used_nonterms.Clear();
+                //    contexted_list.Clear();
+                //    generated_grammatic.Clear();
+                //    ContextDepend(out generated_grammatic);
+                //}
             }
-            return true;
+            if (used_nonterms.SetEquals(avaliable_nonterms))
+                return true;
+            else
+                return false;
         }
 
         private bool Natural(out List<string> generated_grammatic)

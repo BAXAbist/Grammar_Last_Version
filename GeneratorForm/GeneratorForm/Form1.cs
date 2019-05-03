@@ -37,6 +37,7 @@ namespace GeneratorForm
             rules_tocount_edit.Text = Convert.ToString(Convert.ToInt32(rules_fromcount_edit.Text) + 2);
             rules_fromlength_edit.Text = Convert.ToString(rand.Next(3, 6));
             rule_tolength_edit.Text = Convert.ToString(Convert.ToInt32(rules_fromlength_edit.Text) + 2);
+            set_rules_static.Checked = true;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
