@@ -14,7 +14,7 @@ namespace GeneratorForm
 {
     public partial class GeneratorForm : Form
     {
-        Help_Form f = new Help_Form();
+        Help_Form f;
         private Grammatic gramm;
         private List<string> degradated_grammatic;
         private int gramm_type = 0, gramm_rules_count = 0, gramm_rule_lenght = 0, gramm_nonterms_count = 0;
@@ -239,6 +239,10 @@ namespace GeneratorForm
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
+            if (f == null || f.IsDisposed)
+            {
+                f = new Help_Form();
+            }
             string TextName = "../../Text1.txt";
             f.Help_Form_Changed(TextName);
             f.Show();
@@ -438,8 +442,13 @@ namespace GeneratorForm
             return true;
         }
 
+
         private void Chain_Builder_Button_Help_Click(object sender, EventArgs e)
         {
+            if (f == null || f.IsDisposed)
+            {
+                f = new Help_Form();
+            }
             string TextName = "../../Text2.txt";
             f.Help_Form_Changed(TextName);
             f.Show();
@@ -447,6 +456,10 @@ namespace GeneratorForm
 
         private void CheckBox_Button_Help_Click(object sender, EventArgs e)
         {
+            if (f == null || f.IsDisposed)
+            {
+                f = new Help_Form();
+            }
             string TextName = "../../Text3.txt";
             f.Help_Form_Changed(TextName);
             f.Show();
