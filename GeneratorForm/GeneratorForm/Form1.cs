@@ -321,6 +321,7 @@ namespace GeneratorForm
             {
                 Chain_Builder_RichBox_Folder.Text = OpenFile.FileName;
                 string FileName = Chain_Builder_RichBox_Folder.Text;
+                Chain_Builder_RichBox_EnterManual.Visible = true;
                 FileStream f = new FileStream(FileName, FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(f);
                 Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
@@ -329,7 +330,7 @@ namespace GeneratorForm
 
         private void Chain_Builder_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
-            Chain_Builder_RichBox_EnterManual.Clear();
+            //Chain_Builder_RichBox_EnterManual.Clear();
             Chain_Builder_RichBox_EnterManual.Visible = Chain_Builder_Check_EnterManual.Checked;
         }
 
@@ -495,7 +496,7 @@ namespace GeneratorForm
 
         private void Check_Grammar_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
-            Check_Grammar_RichBox_EnterManual.Clear();
+            //Check_Grammar_RichBox_EnterManual.Clear();
             Check_Grammar_RichBox_EnterManual.Visible = Check_Grammar_Check_EnterManual.Checked;
         }
 
@@ -508,6 +509,7 @@ namespace GeneratorForm
                 FileStream f = new FileStream(FileName, FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(f);
                 Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
+                Check_Grammar_RichBox_EnterManual.Visible = true;
             }
         }
 
