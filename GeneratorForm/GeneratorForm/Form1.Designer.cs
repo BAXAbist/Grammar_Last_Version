@@ -218,7 +218,7 @@
             // to_label2
             // 
             this.to_label2.AutoSize = true;
-            this.to_label2.Location = new System.Drawing.Point(44, 46);
+            this.to_label2.Location = new System.Drawing.Point(46, 46);
             this.to_label2.Name = "to_label2";
             this.to_label2.Size = new System.Drawing.Size(19, 13);
             this.to_label2.TabIndex = 7;
@@ -227,7 +227,7 @@
             // to_label1
             // 
             this.to_label1.AutoSize = true;
-            this.to_label1.Location = new System.Drawing.Point(44, 23);
+            this.to_label1.Location = new System.Drawing.Point(46, 23);
             this.to_label1.Name = "to_label1";
             this.to_label1.Size = new System.Drawing.Size(19, 13);
             this.to_label1.TabIndex = 7;
@@ -236,7 +236,7 @@
             // from_label2
             // 
             this.from_label2.AutoSize = true;
-            this.from_label2.Location = new System.Drawing.Point(3, 46);
+            this.from_label2.Location = new System.Drawing.Point(-2, 46);
             this.from_label2.Name = "from_label2";
             this.from_label2.Size = new System.Drawing.Size(18, 13);
             this.from_label2.TabIndex = 6;
@@ -245,7 +245,7 @@
             // from_label1
             // 
             this.from_label1.AutoSize = true;
-            this.from_label1.Location = new System.Drawing.Point(3, 23);
+            this.from_label1.Location = new System.Drawing.Point(-1, 23);
             this.from_label1.Name = "from_label1";
             this.from_label1.Size = new System.Drawing.Size(18, 13);
             this.from_label1.TabIndex = 6;
@@ -309,7 +309,7 @@
             // 
             this.rule_tolength_edit.Location = new System.Drawing.Point(69, 43);
             this.rule_tolength_edit.Name = "rule_tolength_edit";
-            this.rule_tolength_edit.Size = new System.Drawing.Size(16, 20);
+            this.rule_tolength_edit.Size = new System.Drawing.Size(18, 20);
             this.rule_tolength_edit.TabIndex = 1;
             this.rule_tolength_edit.Text = "4";
             // 
@@ -317,23 +317,23 @@
             // 
             this.rules_tocount_edit.Location = new System.Drawing.Point(69, 20);
             this.rules_tocount_edit.Name = "rules_tocount_edit";
-            this.rules_tocount_edit.Size = new System.Drawing.Size(16, 20);
+            this.rules_tocount_edit.Size = new System.Drawing.Size(18, 20);
             this.rules_tocount_edit.TabIndex = 0;
             this.rules_tocount_edit.Text = "5";
             // 
             // rules_fromlength_edit
             // 
-            this.rules_fromlength_edit.Location = new System.Drawing.Point(24, 43);
+            this.rules_fromlength_edit.Location = new System.Drawing.Point(22, 43);
             this.rules_fromlength_edit.Name = "rules_fromlength_edit";
-            this.rules_fromlength_edit.Size = new System.Drawing.Size(16, 20);
+            this.rules_fromlength_edit.Size = new System.Drawing.Size(18, 20);
             this.rules_fromlength_edit.TabIndex = 0;
             this.rules_fromlength_edit.Text = "5";
             // 
             // rules_fromcount_edit
             // 
-            this.rules_fromcount_edit.Location = new System.Drawing.Point(24, 20);
+            this.rules_fromcount_edit.Location = new System.Drawing.Point(22, 20);
             this.rules_fromcount_edit.Name = "rules_fromcount_edit";
-            this.rules_fromcount_edit.Size = new System.Drawing.Size(16, 20);
+            this.rules_fromcount_edit.Size = new System.Drawing.Size(18, 20);
             this.rules_fromcount_edit.TabIndex = 0;
             this.rules_fromcount_edit.Text = "5";
             // 
