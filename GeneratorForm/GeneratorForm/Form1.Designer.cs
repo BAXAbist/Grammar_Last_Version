@@ -112,7 +112,7 @@
             this.type_natural.TabStop = true;
             this.type_natural.Text = "Естественный язык";
             this.type_natural.UseVisualStyleBackColor = true;
-            this.type_natural.CheckedChanged += new System.EventHandler(this.type_natural_CheckedChanged);
+            this.type_natural.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
             // 
             // type_contextDepend
             // 
@@ -124,7 +124,7 @@
             this.type_contextDepend.TabStop = true;
             this.type_contextDepend.Text = "Контекстно-зависимая";
             this.type_contextDepend.UseVisualStyleBackColor = true;
-            this.type_contextDepend.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.type_contextDepend.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
             // 
             // type_contextFree
             // 
@@ -136,7 +136,7 @@
             this.type_contextFree.TabStop = true;
             this.type_contextFree.Text = "Контекстно-свободная";
             this.type_contextFree.UseVisualStyleBackColor = true;
-            this.type_contextFree.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.type_contextFree.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
             // 
             // type_automatic
             // 
@@ -148,7 +148,7 @@
             this.type_automatic.TabStop = true;
             this.type_automatic.Text = "Автоматная";
             this.type_automatic.UseVisualStyleBackColor = true;
-            this.type_automatic.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.type_automatic.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
             // 
             // grammatic_nonterms
             // 
@@ -182,7 +182,6 @@
             this.nonterms_count_label.Size = new System.Drawing.Size(117, 13);
             this.nonterms_count_label.TabIndex = 1;
             this.nonterms_count_label.Text = "Кол-во нетерминалов";
-            this.nonterms_count_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // nonterms_count_edit
             // 
@@ -261,7 +260,7 @@
             this.set_rules_dinamic.TabStop = true;
             this.set_rules_dinamic.Text = "Диапазон значений";
             this.set_rules_dinamic.UseVisualStyleBackColor = true;
-            this.set_rules_dinamic.CheckedChanged += new System.EventHandler(this.set_rules_dinamic_CheckedChanged);
+            this.set_rules_dinamic.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
             // 
             // set_rules_static
             // 
@@ -273,7 +272,7 @@
             this.set_rules_static.TabStop = true;
             this.set_rules_static.Text = "Конкретное значение";
             this.set_rules_static.UseVisualStyleBackColor = true;
-            this.set_rules_static.CheckedChanged += new System.EventHandler(this.set_rules_static_CheckedChanged);
+            this.set_rules_static.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
             // 
             // set_rules_default
             // 
@@ -285,7 +284,7 @@
             this.set_rules_default.TabStop = true;
             this.set_rules_default.Text = "Установить по умолчанию";
             this.set_rules_default.UseVisualStyleBackColor = true;
-            this.set_rules_default.CheckedChanged += new System.EventHandler(this.set_rules_default_CheckedChanged);
+            this.set_rules_default.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
             // 
             // rule_length_label
             // 

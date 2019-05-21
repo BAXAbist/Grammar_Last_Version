@@ -65,43 +65,47 @@ namespace ClassLibrary1
         public bool GenerateGrammatic(int type, out List<string> generated_grammatic)
         {
             bool success = false;
-            switch (type)
+            try
             {
-                case 1:
-                    do
-                    {
-                        success = Automatic(out generated_grammatic);
-                    } while (!success);
-                    break;
-                    //return Automatic(out generated_grammatic);
-                case 2:
-                    do
-                    {
-                        success = ContextFree(out generated_grammatic);
-                    } while (!success);
-                    break;
-                    //return ContextFree(out generated_grammatic);
-                case 3:
-                    do
-                    {
-                        success = ContextDepend(out generated_grammatic);
-                    } while (!success);
-                    break;
-                    //return ContextDepend(out generated_grammatic);
-                case 4:
-                    do
-                    {
-                        success = Natural(out generated_grammatic);
-                    } while (!success);
-                    break;
-                    //return Natural(out generated_grammatic);
-                default:
-                    {
-                        generated_grammatic = new List<string>();
-                        return false;
-                    }
+                switch (type)
+                {
+                    case 1:
+                        do
+                        {
+                            success = Automatic(out generated_grammatic);
+                        } while (!success);
+                        break;
+                    case 2:
+                        do
+                        {
+                            success = ContextFree(out generated_grammatic);
+                        } while (!success);
+                        break;
+                    case 3:
+                        do
+                        {
+                            success = ContextDepend(out generated_grammatic);
+                        } while (!success);
+                        break;
+                    case 4:
+                        do
+                        {
+                            success = Natural(out generated_grammatic);
+                        } while (!success);
+                        break;
+                    default:
+                        {
+                            generated_grammatic = new List<string>();
+                            return false;
+                        }
+                }
+                return success;
             }
-            return success;
+            catch
+            {
+                generated_grammatic = new List<string>();
+                return false;
+            }
         }
 
         //Автоматная - разобратся с длинной и терминальными правилами
@@ -181,8 +185,6 @@ namespace ClassLibrary1
                     if (!used_nonterms.SetEquals(avaliable_nonterms))
                     {
                         return false;
-                        //generated_grammatic.Clear();
-                        //Automatic(out generated_grammatic);
                     }
                     else
                         return true;
@@ -225,8 +227,6 @@ namespace ClassLibrary1
                 if (!used_nonterms.SetEquals(avaliable_nonterms))
                 {
                     return false;
-                    //generated_grammatic.Clear();
-                    //Automatic(out generated_grammatic);
                 }
                 else
                     return true;
@@ -317,8 +317,6 @@ namespace ClassLibrary1
                     if (!used_nonterms.SetEquals(avaliable_nonterms))
                     {
                         return false;
-                        //generated_grammatic.Clear();
-                        //Automatic(out generated_grammatic);
                     }
                     else
                         return true;
@@ -364,8 +362,6 @@ namespace ClassLibrary1
                 if (!used_nonterms.SetEquals(avaliable_nonterms))
                 {
                     return false;
-                    //generated_grammatic.Clear();
-                    //ContextFree(out generated_grammatic);
                 }
                 else
                     return true;
@@ -464,16 +460,6 @@ namespace ClassLibrary1
                     f++;
                 }
                 avaliable_nonterms = new HashSet<string>(avaliable_list);
-                //if (!used_nonterms.SetEquals(avaliable_nonterms))
-                //{
-                //    used_list.Clear();
-                //    avaliable_nonterms.Clear();
-                //    avaliable_list.Clear();
-                //    used_nonterms.Clear();
-                //    contexted_list.Clear();
-                //    generated_grammatic.Clear();
-                //    ContextDepend(out generated_grammatic);
-                //}
             }
             if (used_nonterms.SetEquals(avaliable_nonterms))
                 return true;

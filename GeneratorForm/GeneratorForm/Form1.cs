@@ -31,7 +31,6 @@ namespace GeneratorForm
                 auto_right.Checked = true;
             buttonSave.Hide();
             type_contextFree.Checked = true;
-            //setDefaultRules.Checked = false;
             nonterms_count_edit.Text = Convert.ToString(rand.Next(2, 26));
             rules_fromcount_edit.Text = Convert.ToString(rand.Next(1, 10));
             rules_tocount_edit.Text = Convert.ToString(Convert.ToInt32(rules_fromcount_edit.Text) + 2);
@@ -40,86 +39,95 @@ namespace GeneratorForm
             set_rules_static.Checked = true;
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void Grammar_Type_Set(object sender, EventArgs e)
         {
-            this.gramm_type = 2;
-            rule_tolength_edit.Show();
-            rule_length_label.Show();
-            grammatic_auto_type.Hide();
-            set_rules_dinamic.Show();
+            rule_tolength_edit.Visible = (sender == type_automatic) ? false : true;
+            rule_length_label.Visible = (sender == type_automatic) ? false : true;
+            grammatic_auto_type.Visible = (sender == type_automatic) ? true : false;
+            set_rules_dinamic.Visible = (sender == type_automatic) ? false : true;
+            rules_fromcount_edit.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            rules_fromlength_edit.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            to_label1.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            to_label2.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            from_label1.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            from_label2.Visible = (set_rules_dinamic.Checked && set_rules_dinamic.Visible) ? true : false;
+            if (sender == type_automatic)
+                gramm_type = 1;
+            else
+                if (sender == type_contextFree)
+                gramm_type = 2;
+            else
+                if (sender == type_contextDepend)
+                gramm_type = 3;
+            else
+                gramm_type = 4;
+            if (gramm_type == 1)
+                set_rules_static.Checked = true;
         }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            this.gramm_type = 3;
-            rule_tolength_edit.Show();
-            rule_length_label.Show();
-            grammatic_auto_type.Hide();
-            set_rules_dinamic.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (setDefaultRules.Checked)
-        //    {
-        //        rules_count_edit.ReadOnly = true;
-        //        rule_length_edit.ReadOnly = true;
-        //        rules_count_edit.BackColor = SystemColors.Control;
-        //        rule_length_edit.BackColor = SystemColors.Control;
-        //        rules_count_edit.Text = "5";
-        //        rule_length_edit.Text = "4";
-        //    }
-        //    else
-        //    {
-        //        rules_count_edit.ReadOnly = false;
-        //        rule_length_edit.ReadOnly = false;
-        //        rules_count_edit.BackColor = SystemColors.Window;
-        //        rule_length_edit.BackColor = SystemColors.Window;
-        //    }
-        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gramm_nonterms_count = Convert.ToInt32(nonterms_count_edit.Text);
+            grammatic_textBox.Clear();
+            bool error = false;
+            if (!int.TryParse(nonterms_count_edit.Text, out gramm_nonterms_count) || gramm_nonterms_count < 1)
+            {
+                grammatic_textBox.AppendText("\tНеправильно введено количество нетерминалов. Введите целое число, большее нуля\n");
+                error = true; ;
+            }
             if (!set_rules_dinamic.Checked)
             {
-                gramm_rules_count = Convert.ToInt32(rules_tocount_edit.Text);
-                gramm_rule_lenght = Convert.ToInt32(rule_tolength_edit.Text);
+                if(!int.TryParse(rules_tocount_edit.Text, out gramm_rules_count)||gramm_rules_count<1)
+                {
+                    grammatic_textBox.AppendText("\tНеверно введено количество замен. Введите целое число, большее нуля\n");
+                    error = true;
+                }
+                if (!int.TryParse(rule_tolength_edit.Text, out gramm_rule_lenght) || gramm_rule_lenght < 1)
+                {
+                    grammatic_textBox.AppendText("\tНеверно введена длинна замен. Введите целое число, большее нуля\n");
+                    error = true;
+                }
             }
             else
             {
                 Random rand = new Random();
-                int i = Convert.ToInt32(rules_fromcount_edit.Text);
-                int j = Convert.ToInt32(rules_tocount_edit.Text);
-                if(i>j)
+                int i, j;
+                if (!int.TryParse(rules_fromcount_edit.Text, out i) || i < 1)
                 {
-                    int c = i;
-                    i = j;
-                    j = c;
+                    grammatic_textBox.AppendText("\tНеверно введена левая граница возмножного количества замен. Введите целое число, большее нуля\n");
+                    error = true;
                 }
-                gramm_rules_count = rand.Next(i, j);
-                i = Convert.ToInt32(rules_fromlength_edit.Text);
-                j = Convert.ToInt32(rule_tolength_edit.Text);
-                if (i > j)
+                if(!int.TryParse(rules_tocount_edit.Text, out j)||j<1||j<i)
                 {
-                    int c = i;
-                    i = j;
-                    j = c;
+                    grammatic_textBox.AppendText("\tНеверно введена правая граница возможного количества замен. Введите целое число, большее нуля и большее, либо равное левой границе\n");
+                    error = true;
                 }
-                gramm_rule_lenght = rand.Next(i,j);
+                if(!error)
+                    gramm_rules_count = rand.Next(i, j);
+                if(!int.TryParse(rules_fromlength_edit.Text, out i)||i<1)
+                {
+                    grammatic_textBox.AppendText("\tНеверно введена левая гранца возмножной длинны замены. Введите целое число, большее нуля\n");
+                    error = true;
+                }
+                if(!int.TryParse(rule_tolength_edit.Text, out j)||j<1||j<i)
+                {
+                    grammatic_textBox.AppendText("\tНеверно введена правая граница возмножной длинны замен. Введите целое число, большее нуля и большее, либо равное левой границе\n");
+                    error = true;
+                }
+                if(!error)
+                    gramm_rule_lenght = rand.Next(i, j);
             }
+            if (error)
+                return;
             gramm_left_or_right = auto_left.Checked;
             gramm = new Grammatic(gramm_nonterms_count, gramm_rules_count, gramm_rule_lenght, gramm_left_or_right);
-            gramm.GenerateGrammatic(gramm_type, out degradated_grammatic);
-            grammatic_textBox.Clear();
-            foreach (string s in degradated_grammatic)
-                grammatic_textBox.AppendText(s + "\n");
-            buttonSave.Show();
+            if (!gramm.GenerateGrammatic(gramm_type, out degradated_grammatic))
+                grammatic_textBox.AppendText("Во время генерации возникла ошибка. Попробуйте снова или с другими параметрами");
+            else
+            {
+                foreach (string s in degradated_grammatic)
+                    grammatic_textBox.AppendText(s + "\n");
+                buttonSave.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -148,62 +156,38 @@ namespace GeneratorForm
             }
         }
 
-        private void type_natural_CheckedChanged(object sender, EventArgs e)
+        private void Set_Rules_Type(object sender, EventArgs e)
         {
-            if (type_natural.Checked)
+            if(sender == set_rules_default)
             {
-                gramm_type = 4;
-                rule_tolength_edit.Show();
-                rule_length_label.Show();
-                grammatic_auto_type.Hide();
-                set_rules_dinamic.Show();
+                rules_fromcount_edit.Hide();
+                rules_fromlength_edit.Hide();
+                to_label1.Hide();
+                to_label2.Hide();
+                from_label1.Hide();
+                from_label2.Hide();
+                rules_tocount_edit.Text = "5";
+                rules_fromcount_edit.Text = "5";
+                rule_tolength_edit.Text = "4";
+                rules_fromlength_edit.Text = "4";
+                rules_tocount_edit.BackColor = SystemColors.Control;
+                rule_tolength_edit.BackColor = SystemColors.Control;
+                rule_tolength_edit.ReadOnly = true;
+                rules_tocount_edit.ReadOnly = true;
             }
-        }
-
-        private void set_rules_default_CheckedChanged(object sender, EventArgs e)
-        {
-            rules_fromcount_edit.Hide();
-            rules_fromlength_edit.Hide();
-            to_label1.Hide();
-            to_label2.Hide();
-            from_label1.Hide();
-            from_label2.Hide();
-            rules_tocount_edit.Text = "5";
-            rules_fromcount_edit.Text = "5";
-            rule_tolength_edit.Text = "4";
-            rules_fromlength_edit.Text = "4";
-            rules_tocount_edit.BackColor = SystemColors.Control;
-            rule_tolength_edit.BackColor = SystemColors.Control;
-            rule_tolength_edit.ReadOnly = true;
-            rules_tocount_edit.ReadOnly = true;
-        }
-
-        private void set_rules_static_CheckedChanged(object sender, EventArgs e)
-        {
-            rules_fromcount_edit.Hide();
-            rules_fromlength_edit.Hide();
-            to_label1.Hide();
-            to_label2.Hide();
-            from_label1.Hide();
-            from_label2.Hide();
-            rule_tolength_edit.ReadOnly = false;
-            rules_tocount_edit.ReadOnly = false;
-            rules_tocount_edit.BackColor = SystemColors.Window;
-            rule_tolength_edit.BackColor = SystemColors.Window;
-        }
-
-        private void set_rules_dinamic_CheckedChanged(object sender, EventArgs e)
-        {
-            rules_fromcount_edit.Show();
-            rules_fromlength_edit.Show();
-            to_label1.Show();
-            to_label2.Show();
-            from_label1.Show();
-            from_label2.Show();
-            rule_tolength_edit.ReadOnly = false;
-            rules_tocount_edit.ReadOnly = false;
-            rules_tocount_edit.BackColor = SystemColors.Window;
-            rule_tolength_edit.BackColor = SystemColors.Window;
+            else
+            {
+                rule_tolength_edit.ReadOnly = false;
+                rules_tocount_edit.ReadOnly = false;
+                rules_tocount_edit.BackColor = SystemColors.Window;
+                rule_tolength_edit.BackColor = SystemColors.Window;
+                rules_fromcount_edit.Visible = (sender == set_rules_dinamic) ? true : false;
+                rules_fromlength_edit.Visible = (sender == set_rules_dinamic) ? true : false;
+                to_label1.Visible = (sender == set_rules_dinamic) ? true : false;
+                to_label2.Visible = (sender == set_rules_dinamic) ? true : false;
+                from_label1.Visible = (sender == set_rules_dinamic) ? true : false;
+                from_label2.Visible = (sender == set_rules_dinamic) ? true : false; 
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -219,22 +203,6 @@ namespace GeneratorForm
                 nonterms_count_edit.ReadOnly = false;
                 nonterms_count_edit.BackColor = SystemColors.Window;
             }
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            this.gramm_type = 1;
-            rule_tolength_edit.Hide();
-            rule_length_label.Hide();
-            grammatic_auto_type.Show();
-            rules_fromcount_edit.Hide();
-            rules_fromlength_edit.Hide();
-            to_label1.Hide();
-            to_label2.Hide();
-            from_label1.Hide();
-            from_label2.Hide();
-            set_rules_static.Checked = true;
-            set_rules_dinamic.Hide();
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
