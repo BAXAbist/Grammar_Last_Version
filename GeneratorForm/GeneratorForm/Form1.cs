@@ -11,6 +11,7 @@ using System.IO;
 using ClassLibrary1;
 using Chain_Build;
 using Check_Grammar;
+using ErrorHandler;
 
 namespace GeneratorForm
 {
@@ -23,6 +24,8 @@ namespace GeneratorForm
         private bool gramm_left_or_right = false;
         private Builder chain = new Builder();
         private Checker asys = new Checker();
+        private Handler errHand = new Handler();
+
         //часть с окном генерации грамматик
         public GeneratorForm()
         {
@@ -247,9 +250,11 @@ namespace GeneratorForm
         private void Chain_Builder_Button_Compile_Click(object sender, EventArgs e)
         {
             string[] str = Chain_Builder_RichBox_EnterManual.Text.Split('\n');
-            string result;
-            result = chain.GenerateChain(str);
-            Chain_Builder_RichBox_Result.Text = result;
+            bool f = errHand.CheckGramm(str);
+            if (f)
+                Chain_Builder_RichBox_Result.Text = chain.GenerateChain(str);
+            else
+                Chain_Builder_RichBox_Result.Text = "Неправильный ввод грамматики";
             Chain_Builder_Button_SaveFile.Visible=true;
         }
 
@@ -297,7 +302,11 @@ namespace GeneratorForm
         private void Check_Grammar_Button_Check_Click(object sender, EventArgs e)
         {
             string[] str = Check_Grammar_RichBox_EnterManual.Text.Split('\n');
-            Check_Grammar_RichBox_Result.Text = asys.Analysis(str);
+            bool f = errHand.CheckGramm(str);
+            if (f)
+                Check_Grammar_RichBox_Result.Text = asys.Analysis(str);
+            else
+                Check_Grammar_RichBox_Result.Text = "Неправильный ввод грамматики";
         }
 
         private void CheckBox_Button_Help_Click(object sender, EventArgs e)
