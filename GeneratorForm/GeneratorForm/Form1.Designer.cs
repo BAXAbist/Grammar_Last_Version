@@ -254,7 +254,7 @@
             // set_rules_dinamic
             // 
             this.set_rules_dinamic.AutoSize = true;
-            this.set_rules_dinamic.Location = new System.Drawing.Point(6, 121);
+            this.set_rules_dinamic.Location = new System.Drawing.Point(2, 117);
             this.set_rules_dinamic.Name = "set_rules_dinamic";
             this.set_rules_dinamic.Size = new System.Drawing.Size(126, 17);
             this.set_rules_dinamic.TabIndex = 5;
@@ -266,7 +266,7 @@
             // set_rules_static
             // 
             this.set_rules_static.AutoSize = true;
-            this.set_rules_static.Location = new System.Drawing.Point(6, 97);
+            this.set_rules_static.Location = new System.Drawing.Point(2, 97);
             this.set_rules_static.Name = "set_rules_static";
             this.set_rules_static.Size = new System.Drawing.Size(135, 17);
             this.set_rules_static.TabIndex = 4;
@@ -278,7 +278,7 @@
             // set_rules_default
             // 
             this.set_rules_default.AutoSize = true;
-            this.set_rules_default.Location = new System.Drawing.Point(7, 73);
+            this.set_rules_default.Location = new System.Drawing.Point(2, 74);
             this.set_rules_default.Name = "set_rules_default";
             this.set_rules_default.Size = new System.Drawing.Size(159, 17);
             this.set_rules_default.TabIndex = 3;
@@ -480,6 +480,7 @@
             // 
             this.Chain_Builder_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
             this.Chain_Builder_RichBox_Folder.Name = "Chain_Builder_RichBox_Folder";
+            this.Chain_Builder_RichBox_Folder.ReadOnly = true;
             this.Chain_Builder_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
             this.Chain_Builder_RichBox_Folder.TabIndex = 5;
             this.Chain_Builder_RichBox_Folder.Text = "";
@@ -586,6 +587,7 @@
             // 
             this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
             this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
+            this.Check_Grammar_RichBox_Folder.ReadOnly = true;
             this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
             this.Check_Grammar_RichBox_Folder.TabIndex = 3;
             this.Check_Grammar_RichBox_Folder.Text = "";
