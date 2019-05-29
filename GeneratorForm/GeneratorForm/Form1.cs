@@ -68,22 +68,35 @@ namespace GeneratorForm
         private void button1_Click(object sender, EventArgs e)
         {
             grammatic_textBox.Clear();
+            nonterms_count_edit.BackColor = Color.White;
+            rules_tocount_edit.BackColor = Color.White;
+            rule_tolength_edit.BackColor = Color.White;
+            rules_fromcount_edit.BackColor = Color.White;
+            rules_fromlength_edit.BackColor = Color.White;
+            grammatic_nonterms.Text = "Нетерминалы";
+            grammatic_rules.Text = "Правила";
             bool error = false;
             if (!int.TryParse(nonterms_count_edit.Text, out gramm_nonterms_count) || gramm_nonterms_count < 1)
             {
-                grammatic_textBox.AppendText("\tНеправильно введено количество нетерминалов. Введите целое число, большее нуля\n");
+                grammatic_textBox.AppendText("\tНеправильно введено количество нетерминалов. Введите натуральное число\n");
+                grammatic_nonterms.Text = "ВОЗНИКЛА ОШИБКА";
+                nonterms_count_edit.BackColor = Color.Red;
                 error = true; ;
             }
             if (!set_rules_dinamic.Checked)
             {
                 if(!int.TryParse(rules_tocount_edit.Text, out gramm_rules_count)||gramm_rules_count<1)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введено количество замен. Введите целое число, большее нуля\n");
+                    grammatic_textBox.AppendText("\tНеверно введено количество замен. Введите натуральное число\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rules_tocount_edit.BackColor = Color.Red;
                     error = true;
                 }
                 if (!int.TryParse(rule_tolength_edit.Text, out gramm_rule_lenght) || gramm_rule_lenght < 1)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введена длинна замен. Введите целое число, большее нуля\n");
+                    grammatic_textBox.AppendText("\tНеверно введена длинна замен. Введите натуральное число\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rule_tolength_edit.BackColor = Color.Red;
                     error = true;
                 }
             }
@@ -93,24 +106,32 @@ namespace GeneratorForm
                 int i, j;
                 if (!int.TryParse(rules_fromcount_edit.Text, out i) || i < 1)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введена левая граница возмножного количества замен. Введите целое число, большее нуля\n");
+                    grammatic_textBox.AppendText("\tНеверно введена левая граница возмножного количества замен. Введите натуральное число\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rules_fromcount_edit.BackColor = Color.Red;
                     error = true;
                 }
                 if(!int.TryParse(rules_tocount_edit.Text, out j)||j<1||j<i)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введена правая граница возможного количества замен. Введите целое число, большее нуля и большее, либо равное левой границе\n");
+                    grammatic_textBox.AppendText("\tНеверно введена правая граница возможного количества замен. Введите натуральное число, большее, либо равное левой границе\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rules_tocount_edit.BackColor = Color.Red;
                     error = true;
                 }
                 if(!error)
                     gramm_rules_count = rand.Next(i, j);
                 if(!int.TryParse(rules_fromlength_edit.Text, out i)||i<1)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введена левая гранца возмножной длинны замены. Введите целое число, большее нуля\n");
+                    grammatic_textBox.AppendText("\tНеверно введена левая гранца возмножной длинны замены. Введите натуральное число\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rules_fromlength_edit.BackColor = Color.Red;
                     error = true;
                 }
                 if(!int.TryParse(rule_tolength_edit.Text, out j)||j<1||j<i)
                 {
-                    grammatic_textBox.AppendText("\tНеверно введена правая граница возмножной длинны замен. Введите целое число, большее нуля и большее, либо равное левой границе\n");
+                    grammatic_textBox.AppendText("\tНеверно введена правая граница возмножной длинны замен. Введите натуральное число, большее, либо равное левой границе\n");
+                    grammatic_rules.Text = "ВОЗНИКЛА ОШИБКА";
+                    rule_tolength_edit.BackColor = Color.Red;
                     error = true;
                 }
                 if(!error)
@@ -121,7 +142,14 @@ namespace GeneratorForm
             gramm_left_or_right = auto_left.Checked;
             gramm = new Grammatic(gramm_nonterms_count, gramm_rules_count, gramm_rule_lenght, gramm_left_or_right);
             if (!gramm.GenerateGrammatic(gramm_type, out degradated_grammatic))
+            {
                 grammatic_textBox.AppendText("Во время генерации возникла ошибка. Попробуйте снова или с другими параметрами");
+                nonterms_count_edit.BackColor = Color.Red;
+                rules_tocount_edit.BackColor = Color.Red;
+                rule_tolength_edit.BackColor = Color.Red;
+                rules_fromcount_edit.BackColor = Color.Red;
+                rules_fromlength_edit.BackColor = Color.Red;
+            }
             else
             {
                 foreach (string s in degradated_grammatic)

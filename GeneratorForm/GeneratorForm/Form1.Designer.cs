@@ -28,15 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Check_Grammar_Check_EnterManual = new System.Windows.Forms.CheckBox();
+            this.Check_Grammar_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
+            this.Check_Grammar_RichBox_Result = new System.Windows.Forms.RichTextBox();
+            this.Check_Grammar_RichBox_Folder = new System.Windows.Forms.RichTextBox();
+            this.Check_Grammar_Button_Folder = new System.Windows.Forms.Button();
+            this.CheckBox_Button_Help = new System.Windows.Forms.Button();
+            this.Check_Grammar_Button_Check = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Chain_Builder_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
+            this.Chain_Builder_RichBox_Result = new System.Windows.Forms.RichTextBox();
+            this.Chain_Builder_RichBox_Folder = new System.Windows.Forms.RichTextBox();
+            this.Chain_Builder_Check_EnterManual = new System.Windows.Forms.CheckBox();
+            this.Chain_Builder_Button_Compile = new System.Windows.Forms.Button();
+            this.Chain_Builder_Button_SaveFile = new System.Windows.Forms.Button();
+            this.Chain_Builder_Button_Help = new System.Windows.Forms.Button();
+            this.Chain_Builder_Button_Folder = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grammatic_type = new System.Windows.Forms.GroupBox();
             this.type_natural = new System.Windows.Forms.RadioButton();
             this.type_contextDepend = new System.Windows.Forms.RadioButton();
             this.type_contextFree = new System.Windows.Forms.RadioButton();
             this.type_automatic = new System.Windows.Forms.RadioButton();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.grammatic_auto_type = new System.Windows.Forms.GroupBox();
+            this.auto_right = new System.Windows.Forms.RadioButton();
+            this.auto_left = new System.Windows.Forms.RadioButton();
+            this.buttonGenerate = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.grammatic_nonterms = new System.Windows.Forms.GroupBox();
             this.setDefaultNonterms = new System.Windows.Forms.CheckBox();
             this.nonterms_count_label = new System.Windows.Forms.Label();
             this.nonterms_count_edit = new System.Windows.Forms.TextBox();
+            this.grammatic_textBox = new System.Windows.Forms.RichTextBox();
             this.grammatic_rules = new System.Windows.Forms.GroupBox();
             this.to_label2 = new System.Windows.Forms.Label();
             this.to_label1 = new System.Windows.Forms.Label();
@@ -51,43 +78,220 @@
             this.rules_tocount_edit = new System.Windows.Forms.TextBox();
             this.rules_fromlength_edit = new System.Windows.Forms.TextBox();
             this.rules_fromcount_edit = new System.Windows.Forms.TextBox();
-            this.grammatic_auto_type = new System.Windows.Forms.GroupBox();
-            this.auto_right = new System.Windows.Forms.RadioButton();
-            this.auto_left = new System.Windows.Forms.RadioButton();
-            this.buttonGenerate = new System.Windows.Forms.Button();
-            this.grammatic_textBox = new System.Windows.Forms.RichTextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonHelp = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Chain_Builder_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
-            this.Chain_Builder_RichBox_Result = new System.Windows.Forms.RichTextBox();
-            this.Chain_Builder_RichBox_Folder = new System.Windows.Forms.RichTextBox();
-            this.Chain_Builder_Check_EnterManual = new System.Windows.Forms.CheckBox();
-            this.Chain_Builder_Button_Compile = new System.Windows.Forms.Button();
-            this.Chain_Builder_Button_SaveFile = new System.Windows.Forms.Button();
-            this.Chain_Builder_Button_Help = new System.Windows.Forms.Button();
-            this.Chain_Builder_Button_Folder = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.Check_Grammar_Check_EnterManual = new System.Windows.Forms.CheckBox();
-            this.Check_Grammar_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
-            this.Check_Grammar_RichBox_Result = new System.Windows.Forms.RichTextBox();
-            this.Check_Grammar_RichBox_Folder = new System.Windows.Forms.RichTextBox();
-            this.Check_Grammar_Button_Folder = new System.Windows.Forms.Button();
-            this.CheckBox_Button_Help = new System.Windows.Forms.Button();
-            this.Check_Grammar_Button_Check = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.grammatic_type.SuspendLayout();
+            this.grammatic_auto_type.SuspendLayout();
             this.grammatic_nonterms.SuspendLayout();
             this.grammatic_rules.SuspendLayout();
-            this.grammatic_auto_type.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.Check_Grammar_Check_EnterManual);
+            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_EnterManual);
+            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_Result);
+            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_Folder);
+            this.tabPage3.Controls.Add(this.Check_Grammar_Button_Folder);
+            this.tabPage3.Controls.Add(this.CheckBox_Button_Help);
+            this.tabPage3.Controls.Add(this.Check_Grammar_Button_Check);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(836, 248);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Анализатор";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Check_Grammar_Check_EnterManual
+            // 
+            this.Check_Grammar_Check_EnterManual.AutoSize = true;
+            this.Check_Grammar_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
+            this.Check_Grammar_Check_EnterManual.Name = "Check_Grammar_Check_EnterManual";
+            this.Check_Grammar_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
+            this.Check_Grammar_Check_EnterManual.TabIndex = 6;
+            this.Check_Grammar_Check_EnterManual.Text = "Ввести вручную";
+            this.Check_Grammar_Check_EnterManual.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Check_EnterManual.CheckedChanged += new System.EventHandler(this.Check_Grammar_Check_EnterManual_CheckedChanged);
+            // 
+            // Check_Grammar_RichBox_EnterManual
+            // 
+            this.Check_Grammar_RichBox_EnterManual.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Check_Grammar_RichBox_EnterManual.Location = new System.Drawing.Point(477, 78);
+            this.Check_Grammar_RichBox_EnterManual.Name = "Check_Grammar_RichBox_EnterManual";
+            this.Check_Grammar_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
+            this.Check_Grammar_RichBox_EnterManual.TabIndex = 5;
+            this.Check_Grammar_RichBox_EnterManual.Text = "";
+            this.Check_Grammar_RichBox_EnterManual.Visible = false;
+            // 
+            // Check_Grammar_RichBox_Result
+            // 
+            this.Check_Grammar_RichBox_Result.Location = new System.Drawing.Point(6, 171);
+            this.Check_Grammar_RichBox_Result.Name = "Check_Grammar_RichBox_Result";
+            this.Check_Grammar_RichBox_Result.ReadOnly = true;
+            this.Check_Grammar_RichBox_Result.Size = new System.Drawing.Size(458, 46);
+            this.Check_Grammar_RichBox_Result.TabIndex = 4;
+            this.Check_Grammar_RichBox_Result.Text = "";
+            // 
+            // Check_Grammar_RichBox_Folder
+            // 
+            this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
+            this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
+            this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
+            this.Check_Grammar_RichBox_Folder.TabIndex = 3;
+            this.Check_Grammar_RichBox_Folder.Text = "";
+            // 
+            // Check_Grammar_Button_Folder
+            // 
+            this.Check_Grammar_Button_Folder.Location = new System.Drawing.Point(309, 117);
+            this.Check_Grammar_Button_Folder.Name = "Check_Grammar_Button_Folder";
+            this.Check_Grammar_Button_Folder.Size = new System.Drawing.Size(162, 23);
+            this.Check_Grammar_Button_Folder.TabIndex = 2;
+            this.Check_Grammar_Button_Folder.Text = "Выберите файл";
+            this.Check_Grammar_Button_Folder.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Button_Folder.Click += new System.EventHandler(this.Check_Grammar_Button_Folder_Click);
+            // 
+            // CheckBox_Button_Help
+            // 
+            this.CheckBox_Button_Help.Location = new System.Drawing.Point(6, 223);
+            this.CheckBox_Button_Help.Name = "CheckBox_Button_Help";
+            this.CheckBox_Button_Help.Size = new System.Drawing.Size(93, 20);
+            this.CheckBox_Button_Help.TabIndex = 1;
+            this.CheckBox_Button_Help.Text = "Помощь/Help";
+            this.CheckBox_Button_Help.UseVisualStyleBackColor = true;
+            this.CheckBox_Button_Help.Click += new System.EventHandler(this.CheckBox_Button_Help_Click);
+            // 
+            // Check_Grammar_Button_Check
+            // 
+            this.Check_Grammar_Button_Check.Location = new System.Drawing.Point(564, 25);
+            this.Check_Grammar_Button_Check.Name = "Check_Grammar_Button_Check";
+            this.Check_Grammar_Button_Check.Size = new System.Drawing.Size(182, 46);
+            this.Check_Grammar_Button_Check.TabIndex = 0;
+            this.Check_Grammar_Button_Check.Text = "Проверить";
+            this.Check_Grammar_Button_Check.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Button_Check.Click += new System.EventHandler(this.Check_Grammar_Button_Check_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_EnterManual);
+            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Result);
+            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Folder);
+            this.tabPage2.Controls.Add(this.Chain_Builder_Check_EnterManual);
+            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Compile);
+            this.tabPage2.Controls.Add(this.Chain_Builder_Button_SaveFile);
+            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Help);
+            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Folder);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(836, 248);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Составитель";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Chain_Builder_RichBox_EnterManual
+            // 
+            this.Chain_Builder_RichBox_EnterManual.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Chain_Builder_RichBox_EnterManual.Location = new System.Drawing.Point(477, 78);
+            this.Chain_Builder_RichBox_EnterManual.Name = "Chain_Builder_RichBox_EnterManual";
+            this.Chain_Builder_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
+            this.Chain_Builder_RichBox_EnterManual.TabIndex = 7;
+            this.Chain_Builder_RichBox_EnterManual.Text = "";
+            this.Chain_Builder_RichBox_EnterManual.Visible = false;
+            // 
+            // Chain_Builder_RichBox_Result
+            // 
+            this.Chain_Builder_RichBox_Result.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Chain_Builder_RichBox_Result.Location = new System.Drawing.Point(6, 171);
+            this.Chain_Builder_RichBox_Result.Name = "Chain_Builder_RichBox_Result";
+            this.Chain_Builder_RichBox_Result.ReadOnly = true;
+            this.Chain_Builder_RichBox_Result.Size = new System.Drawing.Size(458, 46);
+            this.Chain_Builder_RichBox_Result.TabIndex = 6;
+            this.Chain_Builder_RichBox_Result.Text = "";
+            // 
+            // Chain_Builder_RichBox_Folder
+            // 
+            this.Chain_Builder_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
+            this.Chain_Builder_RichBox_Folder.Name = "Chain_Builder_RichBox_Folder";
+            this.Chain_Builder_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
+            this.Chain_Builder_RichBox_Folder.TabIndex = 5;
+            this.Chain_Builder_RichBox_Folder.Text = "";
+            // 
+            // Chain_Builder_Check_EnterManual
+            // 
+            this.Chain_Builder_Check_EnterManual.AutoSize = true;
+            this.Chain_Builder_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
+            this.Chain_Builder_Check_EnterManual.Name = "Chain_Builder_Check_EnterManual";
+            this.Chain_Builder_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
+            this.Chain_Builder_Check_EnterManual.TabIndex = 4;
+            this.Chain_Builder_Check_EnterManual.Text = "Ввести вручную";
+            this.Chain_Builder_Check_EnterManual.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Check_EnterManual.CheckedChanged += new System.EventHandler(this.Chain_Builder_Check_EnterManual_CheckedChanged);
+            // 
+            // Chain_Builder_Button_Compile
+            // 
+            this.Chain_Builder_Button_Compile.Location = new System.Drawing.Point(564, 25);
+            this.Chain_Builder_Button_Compile.Name = "Chain_Builder_Button_Compile";
+            this.Chain_Builder_Button_Compile.Size = new System.Drawing.Size(182, 46);
+            this.Chain_Builder_Button_Compile.TabIndex = 3;
+            this.Chain_Builder_Button_Compile.Text = "Составить";
+            this.Chain_Builder_Button_Compile.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Compile.Click += new System.EventHandler(this.Chain_Builder_Button_Compile_Click);
+            // 
+            // Chain_Builder_Button_SaveFile
+            // 
+            this.Chain_Builder_Button_SaveFile.Location = new System.Drawing.Point(477, 219);
+            this.Chain_Builder_Button_SaveFile.Name = "Chain_Builder_Button_SaveFile";
+            this.Chain_Builder_Button_SaveFile.Size = new System.Drawing.Size(162, 23);
+            this.Chain_Builder_Button_SaveFile.TabIndex = 2;
+            this.Chain_Builder_Button_SaveFile.Text = "Сохранить в файл";
+            this.Chain_Builder_Button_SaveFile.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_SaveFile.Visible = false;
+            this.Chain_Builder_Button_SaveFile.Click += new System.EventHandler(this.Chain_Builder_Button_SaveFile_Click);
+            // 
+            // Chain_Builder_Button_Help
+            // 
+            this.Chain_Builder_Button_Help.Location = new System.Drawing.Point(6, 223);
+            this.Chain_Builder_Button_Help.Name = "Chain_Builder_Button_Help";
+            this.Chain_Builder_Button_Help.Size = new System.Drawing.Size(93, 20);
+            this.Chain_Builder_Button_Help.TabIndex = 1;
+            this.Chain_Builder_Button_Help.Text = "Помощь/Help";
+            this.Chain_Builder_Button_Help.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Help.Click += new System.EventHandler(this.Chain_Builder_Button_Help_Click);
+            // 
+            // Chain_Builder_Button_Folder
+            // 
+            this.Chain_Builder_Button_Folder.Location = new System.Drawing.Point(309, 117);
+            this.Chain_Builder_Button_Folder.Name = "Chain_Builder_Button_Folder";
+            this.Chain_Builder_Button_Folder.Size = new System.Drawing.Size(162, 23);
+            this.Chain_Builder_Button_Folder.TabIndex = 0;
+            this.Chain_Builder_Button_Folder.Text = "Выберите файл";
+            this.Chain_Builder_Button_Folder.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Folder.Click += new System.EventHandler(this.Chain_Builder_Button_Folder_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.grammatic_type);
+            this.tabPage1.Controls.Add(this.buttonHelp);
+            this.tabPage1.Controls.Add(this.grammatic_auto_type);
+            this.tabPage1.Controls.Add(this.buttonGenerate);
+            this.tabPage1.Controls.Add(this.buttonSave);
+            this.tabPage1.Controls.Add(this.grammatic_nonterms);
+            this.tabPage1.Controls.Add(this.grammatic_textBox);
+            this.tabPage1.Controls.Add(this.grammatic_rules);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(836, 248);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Генератор";
             // 
             // grammatic_type
             // 
@@ -150,6 +354,69 @@
             this.type_automatic.UseVisualStyleBackColor = true;
             this.type_automatic.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Location = new System.Drawing.Point(6, 223);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(93, 20);
+            this.buttonHelp.TabIndex = 7;
+            this.buttonHelp.Text = "Помощь/Help";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
+            // grammatic_auto_type
+            // 
+            this.grammatic_auto_type.Controls.Add(this.auto_right);
+            this.grammatic_auto_type.Controls.Add(this.auto_left);
+            this.grammatic_auto_type.Location = new System.Drawing.Point(6, 126);
+            this.grammatic_auto_type.Name = "grammatic_auto_type";
+            this.grammatic_auto_type.Size = new System.Drawing.Size(147, 91);
+            this.grammatic_auto_type.TabIndex = 3;
+            this.grammatic_auto_type.TabStop = false;
+            this.grammatic_auto_type.Text = "Тип автоматной грамматики";
+            // 
+            // auto_right
+            // 
+            this.auto_right.AutoSize = true;
+            this.auto_right.Location = new System.Drawing.Point(7, 62);
+            this.auto_right.Name = "auto_right";
+            this.auto_right.Size = new System.Drawing.Size(63, 17);
+            this.auto_right.TabIndex = 1;
+            this.auto_right.TabStop = true;
+            this.auto_right.Text = "Правая";
+            this.auto_right.UseVisualStyleBackColor = true;
+            // 
+            // auto_left
+            // 
+            this.auto_left.AutoSize = true;
+            this.auto_left.Location = new System.Drawing.Point(7, 38);
+            this.auto_left.Name = "auto_left";
+            this.auto_left.Size = new System.Drawing.Size(57, 17);
+            this.auto_left.TabIndex = 0;
+            this.auto_left.TabStop = true;
+            this.auto_left.Text = "Левая";
+            this.auto_left.UseVisualStyleBackColor = true;
+            // 
+            // buttonGenerate
+            // 
+            this.buttonGenerate.Location = new System.Drawing.Point(564, 25);
+            this.buttonGenerate.Name = "buttonGenerate";
+            this.buttonGenerate.Size = new System.Drawing.Size(182, 46);
+            this.buttonGenerate.TabIndex = 4;
+            this.buttonGenerate.Text = "Сгенерировать";
+            this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(477, 219);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(162, 23);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Сохранить в файл";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.button2_Click);
+            // 
             // grammatic_nonterms
             // 
             this.grammatic_nonterms.Controls.Add(this.setDefaultNonterms);
@@ -191,6 +458,15 @@
             this.nonterms_count_edit.Size = new System.Drawing.Size(47, 20);
             this.nonterms_count_edit.TabIndex = 0;
             this.nonterms_count_edit.Text = "10";
+            // 
+            // grammatic_textBox
+            // 
+            this.grammatic_textBox.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.grammatic_textBox.Location = new System.Drawing.Point(477, 78);
+            this.grammatic_textBox.Name = "grammatic_textBox";
+            this.grammatic_textBox.Size = new System.Drawing.Size(327, 139);
+            this.grammatic_textBox.TabIndex = 5;
+            this.grammatic_textBox.Text = "";
             // 
             // grammatic_rules
             // 
@@ -336,78 +612,6 @@
             this.rules_fromcount_edit.TabIndex = 0;
             this.rules_fromcount_edit.Text = "5";
             // 
-            // grammatic_auto_type
-            // 
-            this.grammatic_auto_type.Controls.Add(this.auto_right);
-            this.grammatic_auto_type.Controls.Add(this.auto_left);
-            this.grammatic_auto_type.Location = new System.Drawing.Point(6, 126);
-            this.grammatic_auto_type.Name = "grammatic_auto_type";
-            this.grammatic_auto_type.Size = new System.Drawing.Size(147, 91);
-            this.grammatic_auto_type.TabIndex = 3;
-            this.grammatic_auto_type.TabStop = false;
-            this.grammatic_auto_type.Text = "Тип автоматной грамматики";
-            // 
-            // auto_right
-            // 
-            this.auto_right.AutoSize = true;
-            this.auto_right.Location = new System.Drawing.Point(7, 62);
-            this.auto_right.Name = "auto_right";
-            this.auto_right.Size = new System.Drawing.Size(63, 17);
-            this.auto_right.TabIndex = 1;
-            this.auto_right.TabStop = true;
-            this.auto_right.Text = "Правая";
-            this.auto_right.UseVisualStyleBackColor = true;
-            // 
-            // auto_left
-            // 
-            this.auto_left.AutoSize = true;
-            this.auto_left.Location = new System.Drawing.Point(7, 38);
-            this.auto_left.Name = "auto_left";
-            this.auto_left.Size = new System.Drawing.Size(57, 17);
-            this.auto_left.TabIndex = 0;
-            this.auto_left.TabStop = true;
-            this.auto_left.Text = "Левая";
-            this.auto_left.UseVisualStyleBackColor = true;
-            // 
-            // buttonGenerate
-            // 
-            this.buttonGenerate.Location = new System.Drawing.Point(564, 25);
-            this.buttonGenerate.Name = "buttonGenerate";
-            this.buttonGenerate.Size = new System.Drawing.Size(182, 46);
-            this.buttonGenerate.TabIndex = 4;
-            this.buttonGenerate.Text = "Сгенерировать";
-            this.buttonGenerate.UseVisualStyleBackColor = true;
-            this.buttonGenerate.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // grammatic_textBox
-            // 
-            this.grammatic_textBox.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.grammatic_textBox.Location = new System.Drawing.Point(477, 78);
-            this.grammatic_textBox.Name = "grammatic_textBox";
-            this.grammatic_textBox.Size = new System.Drawing.Size(327, 139);
-            this.grammatic_textBox.TabIndex = 5;
-            this.grammatic_textBox.Text = "";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(477, 219);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(162, 23);
-            this.buttonSave.TabIndex = 6;
-            this.buttonSave.Text = "Сохранить в файл";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Location = new System.Drawing.Point(6, 223);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(93, 20);
-            this.buttonHelp.TabIndex = 7;
-            this.buttonHelp.Text = "Помощь/Help";
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -419,273 +623,46 @@
             this.tabControl1.Size = new System.Drawing.Size(844, 274);
             this.tabControl1.TabIndex = 8;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.grammatic_type);
-            this.tabPage1.Controls.Add(this.buttonHelp);
-            this.tabPage1.Controls.Add(this.grammatic_auto_type);
-            this.tabPage1.Controls.Add(this.buttonGenerate);
-            this.tabPage1.Controls.Add(this.buttonSave);
-            this.tabPage1.Controls.Add(this.grammatic_nonterms);
-            this.tabPage1.Controls.Add(this.grammatic_textBox);
-            this.tabPage1.Controls.Add(this.grammatic_rules);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(836, 248);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Генератор";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_EnterManual);
-            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Result);
-            this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Folder);
-            this.tabPage2.Controls.Add(this.Chain_Builder_Check_EnterManual);
-            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Compile);
-            this.tabPage2.Controls.Add(this.Chain_Builder_Button_SaveFile);
-            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Help);
-            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Folder);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(836, 248);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Составитель";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Chain_Builder_RichBox_EnterManual
-            // 
-            this.Chain_Builder_RichBox_EnterManual.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Chain_Builder_RichBox_EnterManual.Location = new System.Drawing.Point(477, 78);
-            this.Chain_Builder_RichBox_EnterManual.Name = "Chain_Builder_RichBox_EnterManual";
-            this.Chain_Builder_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
-            this.Chain_Builder_RichBox_EnterManual.TabIndex = 7;
-            this.Chain_Builder_RichBox_EnterManual.Text = "";
-            this.Chain_Builder_RichBox_EnterManual.Visible = false;
-            // 
-            // Chain_Builder_RichBox_Result
-            // 
-            this.Chain_Builder_RichBox_Result.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Chain_Builder_RichBox_Result.Location = new System.Drawing.Point(6, 171);
-            this.Chain_Builder_RichBox_Result.Name = "Chain_Builder_RichBox_Result";
-            this.Chain_Builder_RichBox_Result.ReadOnly = true;
-            this.Chain_Builder_RichBox_Result.Size = new System.Drawing.Size(458, 46);
-            this.Chain_Builder_RichBox_Result.TabIndex = 6;
-            this.Chain_Builder_RichBox_Result.Text = "";
-            // 
-            // Chain_Builder_RichBox_Folder
-            // 
-            this.Chain_Builder_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
-            this.Chain_Builder_RichBox_Folder.Name = "Chain_Builder_RichBox_Folder";
-            this.Chain_Builder_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
-            this.Chain_Builder_RichBox_Folder.TabIndex = 5;
-            this.Chain_Builder_RichBox_Folder.Text = "";
-            // 
-            // Chain_Builder_Check_EnterManual
-            // 
-            this.Chain_Builder_Check_EnterManual.AutoSize = true;
-            this.Chain_Builder_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
-            this.Chain_Builder_Check_EnterManual.Name = "Chain_Builder_Check_EnterManual";
-            this.Chain_Builder_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
-            this.Chain_Builder_Check_EnterManual.TabIndex = 4;
-            this.Chain_Builder_Check_EnterManual.Text = "Ввести вручную";
-            this.Chain_Builder_Check_EnterManual.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Check_EnterManual.CheckedChanged += new System.EventHandler(this.Chain_Builder_Check_EnterManual_CheckedChanged);
-            // 
-            // Chain_Builder_Button_Compile
-            // 
-            this.Chain_Builder_Button_Compile.Location = new System.Drawing.Point(564, 25);
-            this.Chain_Builder_Button_Compile.Name = "Chain_Builder_Button_Compile";
-            this.Chain_Builder_Button_Compile.Size = new System.Drawing.Size(182, 46);
-            this.Chain_Builder_Button_Compile.TabIndex = 3;
-            this.Chain_Builder_Button_Compile.Text = "Составить";
-            this.Chain_Builder_Button_Compile.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Button_Compile.Click += new System.EventHandler(this.Chain_Builder_Button_Compile_Click);
-            // 
-            // Chain_Builder_Button_SaveFile
-            // 
-            this.Chain_Builder_Button_SaveFile.Location = new System.Drawing.Point(477, 219);
-            this.Chain_Builder_Button_SaveFile.Name = "Chain_Builder_Button_SaveFile";
-            this.Chain_Builder_Button_SaveFile.Size = new System.Drawing.Size(162, 23);
-            this.Chain_Builder_Button_SaveFile.TabIndex = 2;
-            this.Chain_Builder_Button_SaveFile.Text = "Сохранить в файл";
-            this.Chain_Builder_Button_SaveFile.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Button_SaveFile.Visible = false;
-            this.Chain_Builder_Button_SaveFile.Click += new System.EventHandler(this.Chain_Builder_Button_SaveFile_Click);
-            // 
-            // Chain_Builder_Button_Help
-            // 
-            this.Chain_Builder_Button_Help.Location = new System.Drawing.Point(6, 223);
-            this.Chain_Builder_Button_Help.Name = "Chain_Builder_Button_Help";
-            this.Chain_Builder_Button_Help.Size = new System.Drawing.Size(93, 20);
-            this.Chain_Builder_Button_Help.TabIndex = 1;
-            this.Chain_Builder_Button_Help.Text = "Помощь/Help";
-            this.Chain_Builder_Button_Help.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Button_Help.Click += new System.EventHandler(this.Chain_Builder_Button_Help_Click);
-            // 
-            // Chain_Builder_Button_Folder
-            // 
-            this.Chain_Builder_Button_Folder.Location = new System.Drawing.Point(309, 117);
-            this.Chain_Builder_Button_Folder.Name = "Chain_Builder_Button_Folder";
-            this.Chain_Builder_Button_Folder.Size = new System.Drawing.Size(162, 23);
-            this.Chain_Builder_Button_Folder.TabIndex = 0;
-            this.Chain_Builder_Button_Folder.Text = "Выберите файл";
-            this.Chain_Builder_Button_Folder.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Button_Folder.Click += new System.EventHandler(this.Chain_Builder_Button_Folder_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.Check_Grammar_Check_EnterManual);
-            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_EnterManual);
-            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_Result);
-            this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_Folder);
-            this.tabPage3.Controls.Add(this.Check_Grammar_Button_Folder);
-            this.tabPage3.Controls.Add(this.CheckBox_Button_Help);
-            this.tabPage3.Controls.Add(this.Check_Grammar_Button_Check);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(836, 248);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Анализатор";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // Check_Grammar_Check_EnterManual
-            // 
-            this.Check_Grammar_Check_EnterManual.AutoSize = true;
-            this.Check_Grammar_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
-            this.Check_Grammar_Check_EnterManual.Name = "Check_Grammar_Check_EnterManual";
-            this.Check_Grammar_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
-            this.Check_Grammar_Check_EnterManual.TabIndex = 6;
-            this.Check_Grammar_Check_EnterManual.Text = "Ввести вручную";
-            this.Check_Grammar_Check_EnterManual.UseVisualStyleBackColor = true;
-            this.Check_Grammar_Check_EnterManual.CheckedChanged += new System.EventHandler(this.Check_Grammar_Check_EnterManual_CheckedChanged);
-            // 
-            // Check_Grammar_RichBox_EnterManual
-            // 
-            this.Check_Grammar_RichBox_EnterManual.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Check_Grammar_RichBox_EnterManual.Location = new System.Drawing.Point(477, 78);
-            this.Check_Grammar_RichBox_EnterManual.Name = "Check_Grammar_RichBox_EnterManual";
-            this.Check_Grammar_RichBox_EnterManual.Size = new System.Drawing.Size(327, 139);
-            this.Check_Grammar_RichBox_EnterManual.TabIndex = 5;
-            this.Check_Grammar_RichBox_EnterManual.Text = "";
-            this.Check_Grammar_RichBox_EnterManual.Visible = false;
-            // 
-            // Check_Grammar_RichBox_Result
-            // 
-            this.Check_Grammar_RichBox_Result.Location = new System.Drawing.Point(6, 171);
-            this.Check_Grammar_RichBox_Result.Name = "Check_Grammar_RichBox_Result";
-            this.Check_Grammar_RichBox_Result.ReadOnly = true;
-            this.Check_Grammar_RichBox_Result.Size = new System.Drawing.Size(458, 46);
-            this.Check_Grammar_RichBox_Result.TabIndex = 4;
-            this.Check_Grammar_RichBox_Result.Text = "";
-            // 
-            // Check_Grammar_RichBox_Folder
-            // 
-            this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
-            this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
-            this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
-            this.Check_Grammar_RichBox_Folder.TabIndex = 3;
-            this.Check_Grammar_RichBox_Folder.Text = "";
-            // 
-            // Check_Grammar_Button_Folder
-            // 
-            this.Check_Grammar_Button_Folder.Location = new System.Drawing.Point(309, 117);
-            this.Check_Grammar_Button_Folder.Name = "Check_Grammar_Button_Folder";
-            this.Check_Grammar_Button_Folder.Size = new System.Drawing.Size(162, 23);
-            this.Check_Grammar_Button_Folder.TabIndex = 2;
-            this.Check_Grammar_Button_Folder.Text = "Выберите файл";
-            this.Check_Grammar_Button_Folder.UseVisualStyleBackColor = true;
-            this.Check_Grammar_Button_Folder.Click += new System.EventHandler(this.Check_Grammar_Button_Folder_Click);
-            // 
-            // CheckBox_Button_Help
-            // 
-            this.CheckBox_Button_Help.Location = new System.Drawing.Point(6, 223);
-            this.CheckBox_Button_Help.Name = "CheckBox_Button_Help";
-            this.CheckBox_Button_Help.Size = new System.Drawing.Size(93, 20);
-            this.CheckBox_Button_Help.TabIndex = 1;
-            this.CheckBox_Button_Help.Text = "Помощь/Help";
-            this.CheckBox_Button_Help.UseVisualStyleBackColor = true;
-            this.CheckBox_Button_Help.Click += new System.EventHandler(this.CheckBox_Button_Help_Click);
-            // 
-            // Check_Grammar_Button_Check
-            // 
-            this.Check_Grammar_Button_Check.Location = new System.Drawing.Point(564, 25);
-            this.Check_Grammar_Button_Check.Name = "Check_Grammar_Button_Check";
-            this.Check_Grammar_Button_Check.Size = new System.Drawing.Size(182, 46);
-            this.Check_Grammar_Button_Check.TabIndex = 0;
-            this.Check_Grammar_Button_Check.Text = "Проверить";
-            this.Check_Grammar_Button_Check.UseVisualStyleBackColor = true;
-            this.Check_Grammar_Button_Check.Click += new System.EventHandler(this.Check_Grammar_Button_Check_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // GeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(847, 282);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GeneratorForm";
             this.Text = "Генератор";
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.grammatic_type.ResumeLayout(false);
             this.grammatic_type.PerformLayout();
+            this.grammatic_auto_type.ResumeLayout(false);
+            this.grammatic_auto_type.PerformLayout();
             this.grammatic_nonterms.ResumeLayout(false);
             this.grammatic_nonterms.PerformLayout();
             this.grammatic_rules.ResumeLayout(false);
             this.grammatic_rules.PerformLayout();
-            this.grammatic_auto_type.ResumeLayout(false);
-            this.grammatic_auto_type.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grammatic_type;
-        private System.Windows.Forms.RadioButton type_contextDepend;
-        private System.Windows.Forms.RadioButton type_contextFree;
-        private System.Windows.Forms.RadioButton type_automatic;
-        private System.Windows.Forms.GroupBox grammatic_nonterms;
-        private System.Windows.Forms.Label nonterms_count_label;
-        private System.Windows.Forms.TextBox nonterms_count_edit;
-        private System.Windows.Forms.CheckBox setDefaultNonterms;
-        private System.Windows.Forms.GroupBox grammatic_rules;
-        private System.Windows.Forms.Label rule_length_label;
-        private System.Windows.Forms.Label rules_count_label;
-        private System.Windows.Forms.TextBox rule_tolength_edit;
-        private System.Windows.Forms.TextBox rules_fromcount_edit;
-        private System.Windows.Forms.GroupBox grammatic_auto_type;
-        private System.Windows.Forms.RadioButton auto_right;
-        private System.Windows.Forms.RadioButton auto_left;
-        private System.Windows.Forms.Button buttonGenerate;
-        private System.Windows.Forms.RichTextBox grammatic_textBox;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.RadioButton type_natural;
-        private System.Windows.Forms.Label to_label2;
-        private System.Windows.Forms.Label to_label1;
-        private System.Windows.Forms.Label from_label2;
-        private System.Windows.Forms.Label from_label1;
-        private System.Windows.Forms.RadioButton set_rules_dinamic;
-        private System.Windows.Forms.RadioButton set_rules_static;
-        private System.Windows.Forms.RadioButton set_rules_default;
-        private System.Windows.Forms.TextBox rules_tocount_edit;
-        private System.Windows.Forms.TextBox rules_fromlength_edit;
-        private System.Windows.Forms.Button buttonHelp;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox Check_Grammar_Check_EnterManual;
+        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_EnterManual;
+        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_Result;
+        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_Folder;
+        private System.Windows.Forms.Button Check_Grammar_Button_Folder;
+        private System.Windows.Forms.Button CheckBox_Button_Help;
+        private System.Windows.Forms.Button Check_Grammar_Button_Check;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.RichTextBox Chain_Builder_RichBox_EnterManual;
         private System.Windows.Forms.RichTextBox Chain_Builder_RichBox_Result;
         private System.Windows.Forms.RichTextBox Chain_Builder_RichBox_Folder;
@@ -694,15 +671,38 @@
         private System.Windows.Forms.Button Chain_Builder_Button_SaveFile;
         private System.Windows.Forms.Button Chain_Builder_Button_Help;
         private System.Windows.Forms.Button Chain_Builder_Button_Folder;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.CheckBox Check_Grammar_Check_EnterManual;
-        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_EnterManual;
-        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_Result;
-        private System.Windows.Forms.RichTextBox Check_Grammar_RichBox_Folder;
-        private System.Windows.Forms.Button Check_Grammar_Button_Folder;
-        private System.Windows.Forms.Button CheckBox_Button_Help;
-        private System.Windows.Forms.Button Check_Grammar_Button_Check;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox grammatic_type;
+        private System.Windows.Forms.RadioButton type_natural;
+        private System.Windows.Forms.RadioButton type_contextDepend;
+        private System.Windows.Forms.RadioButton type_contextFree;
+        private System.Windows.Forms.RadioButton type_automatic;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.GroupBox grammatic_auto_type;
+        private System.Windows.Forms.RadioButton auto_right;
+        private System.Windows.Forms.RadioButton auto_left;
+        private System.Windows.Forms.Button buttonGenerate;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.GroupBox grammatic_nonterms;
+        private System.Windows.Forms.CheckBox setDefaultNonterms;
+        private System.Windows.Forms.Label nonterms_count_label;
+        private System.Windows.Forms.TextBox nonterms_count_edit;
+        private System.Windows.Forms.RichTextBox grammatic_textBox;
+        private System.Windows.Forms.GroupBox grammatic_rules;
+        private System.Windows.Forms.Label to_label2;
+        private System.Windows.Forms.Label to_label1;
+        private System.Windows.Forms.Label from_label2;
+        private System.Windows.Forms.Label from_label1;
+        private System.Windows.Forms.RadioButton set_rules_dinamic;
+        private System.Windows.Forms.RadioButton set_rules_static;
+        private System.Windows.Forms.RadioButton set_rules_default;
+        private System.Windows.Forms.Label rule_length_label;
+        private System.Windows.Forms.Label rules_count_label;
+        private System.Windows.Forms.TextBox rule_tolength_edit;
+        private System.Windows.Forms.TextBox rules_tocount_edit;
+        private System.Windows.Forms.TextBox rules_fromlength_edit;
+        private System.Windows.Forms.TextBox rules_fromcount_edit;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 
