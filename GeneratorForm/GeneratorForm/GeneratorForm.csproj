@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code_Work_with_File.cs" />
+    <Compile Include="Chain_Build.cs" />
+    <Compile Include="Check_Grammar.cs" />
+    <Compile Include="ErrorHandler.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

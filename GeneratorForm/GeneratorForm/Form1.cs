@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using ClassLibrary1;
+using Chain_Build;
+using Check_Grammar;
+using ErrorHandler;
 
 namespace GeneratorForm
 {
@@ -19,6 +22,10 @@ namespace GeneratorForm
         private List<string> degradated_grammatic;
         private int gramm_type = 0, gramm_rules_count = 0, gramm_rule_lenght = 0, gramm_nonterms_count = 0;
         private bool gramm_left_or_right = false;
+        private Builder chain = new Builder();
+        private Checker asys = new Checker();
+        private Handler errHand = new Handler();
+
         //часть с окном генерации грамматик
         public GeneratorForm()
         {
@@ -37,6 +44,7 @@ namespace GeneratorForm
             rules_fromlength_edit.Text = Convert.ToString(rand.Next(3, 6));
             rule_tolength_edit.Text = Convert.ToString(Convert.ToInt32(rules_fromlength_edit.Text) + 2);
             set_rules_static.Checked = true;
+            
         }
 
         private void Grammar_Type_Set(object sender, EventArgs e)
@@ -269,44 +277,13 @@ namespace GeneratorForm
 
         private void Chain_Builder_Button_Compile_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string[]> keyValues = new Dictionary<string, string[]>();
-            string[] words;
-            string[] changes;
-            char[] dumb = { '|', '-' };
-            string reader = Chain_Builder_RichBox_EnterManual.Text;
-            string[] str = reader.Split('\n');
-            for (int i = 0; i < str.Length; i++)
-            {
-                words = str[i].Split(dumb);
-                changes = new string[words.Length - 1];
-                for (int j = 0; j < words.Length - 1; j++)
-                    changes[j] = words[j + 1];
-                keyValues.Add(words[0], changes);
-            }
-
-            Random rand = new Random();
-            string res_in_step = "S";
-            string s;
-            string result = res_in_step;
-            while ((s = KeyCheck(res_in_step, keyValues)) != "")
-            {
-                int index = rand.Next(keyValues[s].Length);
-                string kek = keyValues[s][index];
-                res_in_step = res_in_step.Replace(s, kek);
-                result += " — " + res_in_step;
-            }
-            Chain_Builder_RichBox_Result.Text = result;
+            string[] str = Chain_Builder_RichBox_EnterManual.Text.Split('\n');
+            bool f = errHand.CheckGramm(str);
+            if (f)
+                Chain_Builder_RichBox_Result.Text = chain.GenerateChain(str);
+            else
+                Chain_Builder_RichBox_Result.Text = "Неправильный ввод грамматики";
             Chain_Builder_Button_SaveFile.Visible=true;
-        }
-
-        string KeyCheck(string res, Dictionary<string, string[]> gramm)
-        {
-            foreach (string s in gramm.Keys)
-            {
-                if (res.Contains(s))
-                    return s;
-            }
-            return "";
         }
 
         OpenFileDialog OpenFile = new OpenFileDialog();
@@ -326,119 +303,8 @@ namespace GeneratorForm
 
         private void Chain_Builder_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
-            //Chain_Builder_RichBox_EnterManual.Clear();
-            Chain_Builder_RichBox_EnterManual.Visible = Chain_Builder_Check_EnterManual.Checked;
+            Chain_Builder_RichBox_EnterManual.Visible = true;
         }
-
-
-//Все функции для страницы с анализатором грамматик
-
-        private void Check_Grammar_Button_Check_Click(object sender, EventArgs e)
-        {
-            Dictionary<string, string[]> map = new Dictionary<string, string[]>();
-            string[] words;
-            string[] changes;
-            char[] dumb = { '|', '-' };
-            string reader = Check_Grammar_RichBox_EnterManual.Text;
-            string[] str = reader.Split('\n');
-            for (int i = 0; i < str.Length; i++)
-            {
-                words = str[i].Split(dumb);
-                changes = new string[words.Length - 1];
-                for (int j = 0; j < words.Length - 1; j++)
-                    changes[j] = words[j + 1];
-                map.Add(words[0], changes);
-            }
-
-            bool isAuto = true;
-            bool isCF = false;
-            bool isCS = false;
-            bool isNL = false;
-
-
-            foreach (var k in map.Keys)
-            {
-                if (isAuto)
-                {
-                    isAuto = Check_Auto(k, map[k]);
-                    if (!isAuto)
-                        isCF = true;
-                }
-                if (isCF)
-                {
-                    isCF = Check_Context_Free(k);
-                    if (!isCF)
-                        isCS = true;
-                }
-                if (isCS)
-                {
-                    isCS = Check_Context_Sensitive(k, map[k]);
-                    if (!isCS)
-                    {
-                        isCS = false;
-                        isNL = true;
-                    }
-                }
-            }
-
-            if (isAuto)
-            {
-                Check_Grammar_RichBox_Result.Text = "Автоматная грамматика";
-            }
-            if (isCF)
-            {
-                Check_Grammar_RichBox_Result.Text = "Контекстно-свободная грамматика";
-            }
-            if (isCS)
-            {
-                Check_Grammar_RichBox_Result.Text = "Контекстно-зависимая грамматика";
-            }
-            if (isNL)
-            {
-                Check_Grammar_RichBox_Result.Text = "Естественный язык";
-            }
-        }
-
-        static bool Check_Auto(string key, string[] value)
-        {
-            bool check = true;
-            bool L;
-            bool R;
-            bool L_check = false;
-            bool R_check = false;
-            if (key.Length > 1)
-                return false;
-            for (int i = 0; i < value.Length; i++)
-                if (value[i].Length > 3)
-                    return false;
-            for (int i = 0; i < value.Length; i++)
-            {
-                if (value[i].Length == 2)
-                {
-                    if (check)
-                    {
-                        L_check = char.IsUpper(value[i][0]);
-                        R_check = char.IsUpper(value[i][1]);
-                        check = false;
-                    }
-                    L = char.IsUpper(value[i][0]);                  //true если заглавная false строчная
-                    R = char.IsUpper(value[i][1]);
-                    if ((L != L_check) || (R != R_check))
-                    {
-                        return false;
-                    }
-                }
-                else if (value[i].Length > 2)
-                    return false;
-                else
-                if (char.IsUpper(value[i][0]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
 
         private void Chain_Builder_Button_Help_Click(object sender, EventArgs e)
         {
@@ -449,6 +315,26 @@ namespace GeneratorForm
             string TextName = "../../Text2.txt";
             f.Help_Form_Changed(TextName);
             f.Show();
+        }
+
+        public void Chain_Builder_from_Folder_in_TextBox()
+        {
+            Chain_Builder_RichBox_EnterManual.Visible = true;
+            FileStream f = new FileStream(Chain_Builder_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(f);
+            Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
+        }
+
+        //Все функции для страницы с анализатором грамматик
+
+        private void Check_Grammar_Button_Check_Click(object sender, EventArgs e)
+        {
+            string[] str = Check_Grammar_RichBox_EnterManual.Text.Split('\n');
+            bool f = errHand.CheckGramm(str);
+            if (f)
+                Check_Grammar_RichBox_Result.Text = asys.Analysis(str);
+            else
+                Check_Grammar_RichBox_Result.Text = "Неправильный ввод грамматики";
         }
 
         private void CheckBox_Button_Help_Click(object sender, EventArgs e)
@@ -462,33 +348,7 @@ namespace GeneratorForm
             f.Show();
         }
 
-        static bool Check_Context_Free(string key)
-        {
-            if (key.Length > 1)
-                return false;
-            return true;
-        }
-
-        static bool Check_Context_Sensitive(string key, string[] value)
-        {
-            int j = 0;
-            int l = 0;
-            if (key.Length > 1)
-                for (int i = 0; i < value.Length; i++)
-                {
-                    while (key[j] == value[i][j])
-                        j++;
-                    while ((key[key.Length - l - 1] == value[i][value[i].Length - l - 1]) && (j != key.Length - l - 1))
-                        l++;
-                    if (j != key.Length - l - 1)
-                    {
-                        return false;
-                    }
-                    j = 0;
-                    l = 0;
-                }
-            return true;
-        }
+        
 
         private void Check_Grammar_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
@@ -515,13 +375,6 @@ namespace GeneratorForm
             FileStream f = new FileStream(Check_Grammar_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(f);
             Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
-        }
-        public void Chain_Builder_from_Folder_in_TextBox()
-        {
-            Chain_Builder_RichBox_EnterManual.Visible = true;
-            FileStream f = new FileStream(Chain_Builder_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(f);
-            Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
         }
     }
 }
