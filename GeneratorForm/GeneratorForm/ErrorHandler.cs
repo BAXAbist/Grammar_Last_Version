@@ -17,7 +17,7 @@ namespace ErrorHandler
 
         public bool CheckGramm(string[] masStr)
         {
-            for (int i = 0; i < masStr.Length-1; i++) 
+            for (int i = 0; i < masStr.Length; i++) 
             {
                 if (!CheckString(masStr[i]))
                     return false;
@@ -28,6 +28,8 @@ namespace ErrorHandler
         private bool CheckString(string str)
         {
             int j = 0;
+            if (str == "")
+                return true;
             while (str[j] != '-')
             {
                 if (alphabet.Contains(str[j]))

@@ -79,6 +79,8 @@
             this.rules_fromlength_edit = new System.Windows.Forms.TextBox();
             this.rules_fromcount_edit = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Chain_Builder_Button_Clear = new System.Windows.Forms.Button();
+            this.Check_Grammar_Button_Clear = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,259 +92,12 @@
             this.SuspendLayout();
             // 
             // openFileDialog1
-            // grammatic_type
-            // 
-            this.grammatic_type.Controls.Add(this.type_natural);
-            this.grammatic_type.Controls.Add(this.type_contextDepend);
-            this.grammatic_type.Controls.Add(this.type_contextFree);
-            this.grammatic_type.Controls.Add(this.type_automatic);
-            this.grammatic_type.Location = new System.Drawing.Point(6, 6);
-            this.grammatic_type.Name = "grammatic_type";
-            this.grammatic_type.Size = new System.Drawing.Size(148, 114);
-            this.grammatic_type.TabIndex = 0;
-            this.grammatic_type.TabStop = false;
-            this.grammatic_type.Text = "Тип грамматики";
-            // 
-            // type_natural
-            // 
-            this.type_natural.AutoSize = true;
-            this.type_natural.Location = new System.Drawing.Point(6, 89);
-            this.type_natural.Name = "type_natural";
-            this.type_natural.Size = new System.Drawing.Size(127, 17);
-            this.type_natural.TabIndex = 1;
-            this.type_natural.TabStop = true;
-            this.type_natural.Text = "Естественный язык";
-            this.type_natural.UseVisualStyleBackColor = true;
-            this.type_natural.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
-            // 
-            // type_contextDepend
-            // 
-            this.type_contextDepend.AutoSize = true;
-            this.type_contextDepend.Location = new System.Drawing.Point(6, 66);
-            this.type_contextDepend.Name = "type_contextDepend";
-            this.type_contextDepend.Size = new System.Drawing.Size(143, 17);
-            this.type_contextDepend.TabIndex = 0;
-            this.type_contextDepend.TabStop = true;
-            this.type_contextDepend.Text = "Контекстно-зависимая";
-            this.type_contextDepend.UseVisualStyleBackColor = true;
-            this.type_contextDepend.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
-            // 
-            // type_contextFree
-            // 
-            this.type_contextFree.AutoSize = true;
-            this.type_contextFree.Location = new System.Drawing.Point(6, 43);
-            this.type_contextFree.Name = "type_contextFree";
-            this.type_contextFree.Size = new System.Drawing.Size(141, 17);
-            this.type_contextFree.TabIndex = 0;
-            this.type_contextFree.TabStop = true;
-            this.type_contextFree.Text = "Контекстно-свободная";
-            this.type_contextFree.UseVisualStyleBackColor = true;
-            this.type_contextFree.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
-            // 
-            // type_automatic
-            // 
-            this.type_automatic.AutoSize = true;
-            this.type_automatic.Location = new System.Drawing.Point(7, 20);
-            this.type_automatic.Name = "type_automatic";
-            this.type_automatic.Size = new System.Drawing.Size(86, 17);
-            this.type_automatic.TabIndex = 0;
-            this.type_automatic.TabStop = true;
-            this.type_automatic.Text = "Автоматная";
-            this.type_automatic.UseVisualStyleBackColor = true;
-            this.type_automatic.CheckedChanged += new System.EventHandler(this.Grammar_Type_Set);
-            // 
-            // grammatic_nonterms
-            // 
-            this.grammatic_nonterms.Controls.Add(this.setDefaultNonterms);
-            this.grammatic_nonterms.Controls.Add(this.nonterms_count_label);
-            this.grammatic_nonterms.Controls.Add(this.nonterms_count_edit);
-            this.grammatic_nonterms.Location = new System.Drawing.Point(161, 6);
-            this.grammatic_nonterms.Name = "grammatic_nonterms";
-            this.grammatic_nonterms.Size = new System.Drawing.Size(213, 65);
-            this.grammatic_nonterms.TabIndex = 1;
-            this.grammatic_nonterms.TabStop = false;
-            this.grammatic_nonterms.Text = "Нетерминалы";
-            // 
-            // setDefaultNonterms
-            // 
-            this.setDefaultNonterms.AutoSize = true;
-            this.setDefaultNonterms.Location = new System.Drawing.Point(7, 42);
-            this.setDefaultNonterms.Name = "setDefaultNonterms";
-            this.setDefaultNonterms.Size = new System.Drawing.Size(160, 17);
-            this.setDefaultNonterms.TabIndex = 2;
-            this.setDefaultNonterms.Text = "Установить по умолчанию";
-            this.setDefaultNonterms.UseVisualStyleBackColor = true;
-            this.setDefaultNonterms.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // nonterms_count_label
-            // 
-            this.nonterms_count_label.AutoSize = true;
-            this.nonterms_count_label.BackColor = System.Drawing.Color.Transparent;
-            this.nonterms_count_label.Location = new System.Drawing.Point(60, 23);
-            this.nonterms_count_label.Name = "nonterms_count_label";
-            this.nonterms_count_label.Size = new System.Drawing.Size(117, 13);
-            this.nonterms_count_label.TabIndex = 1;
-            this.nonterms_count_label.Text = "Кол-во нетерминалов";
-            // 
-            // nonterms_count_edit
-            // 
-            this.nonterms_count_edit.BackColor = System.Drawing.SystemColors.Window;
-            this.nonterms_count_edit.Location = new System.Drawing.Point(7, 20);
-            this.nonterms_count_edit.Name = "nonterms_count_edit";
-            this.nonterms_count_edit.Size = new System.Drawing.Size(47, 20);
-            this.nonterms_count_edit.TabIndex = 0;
-            this.nonterms_count_edit.Text = "10";
-            // 
-            // grammatic_rules
-            // 
-            this.grammatic_rules.Controls.Add(this.to_label2);
-            this.grammatic_rules.Controls.Add(this.to_label1);
-            this.grammatic_rules.Controls.Add(this.from_label2);
-            this.grammatic_rules.Controls.Add(this.from_label1);
-            this.grammatic_rules.Controls.Add(this.set_rules_dinamic);
-            this.grammatic_rules.Controls.Add(this.set_rules_static);
-            this.grammatic_rules.Controls.Add(this.set_rules_default);
-            this.grammatic_rules.Controls.Add(this.rule_length_label);
-            this.grammatic_rules.Controls.Add(this.rules_count_label);
-            this.grammatic_rules.Controls.Add(this.rule_tolength_edit);
-            this.grammatic_rules.Controls.Add(this.rules_tocount_edit);
-            this.grammatic_rules.Controls.Add(this.rules_fromlength_edit);
-            this.grammatic_rules.Controls.Add(this.rules_fromcount_edit);
-            this.grammatic_rules.Location = new System.Drawing.Point(161, 77);
-            this.grammatic_rules.Name = "grammatic_rules";
-            this.grammatic_rules.Size = new System.Drawing.Size(310, 140);
-            this.grammatic_rules.TabIndex = 2;
-            this.grammatic_rules.TabStop = false;
-            this.grammatic_rules.Text = "Правила";
-            // 
-            // to_label2
-            // 
-            this.to_label2.AutoSize = true;
-            this.to_label2.Location = new System.Drawing.Point(46, 46);
-            this.to_label2.Name = "to_label2";
-            this.to_label2.Size = new System.Drawing.Size(19, 13);
-            this.to_label2.TabIndex = 7;
-            this.to_label2.Text = "до";
-            // 
-            // to_label1
-            // 
-            this.to_label1.AutoSize = true;
-            this.to_label1.Location = new System.Drawing.Point(46, 23);
-            this.to_label1.Name = "to_label1";
-            this.to_label1.Size = new System.Drawing.Size(19, 13);
-            this.to_label1.TabIndex = 7;
-            this.to_label1.Text = "до";
-            // 
-            // from_label2
-            // 
-            this.from_label2.AutoSize = true;
-            this.from_label2.Location = new System.Drawing.Point(-2, 46);
-            this.from_label2.Name = "from_label2";
-            this.from_label2.Size = new System.Drawing.Size(18, 13);
-            this.from_label2.TabIndex = 6;
-            this.from_label2.Text = "от";
-            // 
-            // from_label1
-            // 
-            this.from_label1.AutoSize = true;
-            this.from_label1.Location = new System.Drawing.Point(-1, 23);
-            this.from_label1.Name = "from_label1";
-            this.from_label1.Size = new System.Drawing.Size(18, 13);
-            this.from_label1.TabIndex = 6;
-            this.from_label1.Text = "от";
-            // 
-            // set_rules_dinamic
-            // 
-            this.set_rules_dinamic.AutoSize = true;
-            this.set_rules_dinamic.Location = new System.Drawing.Point(2, 117);
-            this.set_rules_dinamic.Name = "set_rules_dinamic";
-            this.set_rules_dinamic.Size = new System.Drawing.Size(126, 17);
-            this.set_rules_dinamic.TabIndex = 5;
-            this.set_rules_dinamic.TabStop = true;
-            this.set_rules_dinamic.Text = "Диапазон значений";
-            this.set_rules_dinamic.UseVisualStyleBackColor = true;
-            this.set_rules_dinamic.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
-            // 
-            // set_rules_static
-            // 
-            this.set_rules_static.AutoSize = true;
-            this.set_rules_static.Location = new System.Drawing.Point(2, 97);
-            this.set_rules_static.Name = "set_rules_static";
-            this.set_rules_static.Size = new System.Drawing.Size(135, 17);
-            this.set_rules_static.TabIndex = 4;
-            this.set_rules_static.TabStop = true;
-            this.set_rules_static.Text = "Конкретное значение";
-            this.set_rules_static.UseVisualStyleBackColor = true;
-            this.set_rules_static.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
-            // 
-            // set_rules_default
-            // 
-            this.set_rules_default.AutoSize = true;
-            this.set_rules_default.Location = new System.Drawing.Point(2, 74);
-            this.set_rules_default.Name = "set_rules_default";
-            this.set_rules_default.Size = new System.Drawing.Size(159, 17);
-            this.set_rules_default.TabIndex = 3;
-            this.set_rules_default.TabStop = true;
-            this.set_rules_default.Text = "Установить по умолчанию";
-            this.set_rules_default.UseVisualStyleBackColor = true;
-            this.set_rules_default.CheckedChanged += new System.EventHandler(this.Set_Rules_Type);
-            // 
-            // rule_length_label
-            // 
-            this.rule_length_label.AutoSize = true;
-            this.rule_length_label.Location = new System.Drawing.Point(89, 46);
-            this.rule_length_label.Name = "rule_length_label";
-            this.rule_length_label.Size = new System.Drawing.Size(137, 13);
-            this.rule_length_label.TabIndex = 2;
-            this.rule_length_label.Text = "Длинна каждого правила";
-            // 
-            // rules_count_label
-            // 
-            this.rules_count_label.AutoSize = true;
-            this.rules_count_label.Location = new System.Drawing.Point(89, 23);
-            this.rules_count_label.Name = "rules_count_label";
-            this.rules_count_label.Size = new System.Drawing.Size(217, 13);
-            this.rules_count_label.TabIndex = 2;
-            this.rules_count_label.Text = "Кол-во правил для каждого нетерминала";
-            // 
-            // rule_tolength_edit
-            // 
-            this.rule_tolength_edit.Location = new System.Drawing.Point(69, 43);
-            this.rule_tolength_edit.Name = "rule_tolength_edit";
-            this.rule_tolength_edit.Size = new System.Drawing.Size(18, 20);
-            this.rule_tolength_edit.TabIndex = 1;
-            this.rule_tolength_edit.Text = "4";
-            // 
-            // rules_tocount_edit
-            // 
-            this.rules_tocount_edit.Location = new System.Drawing.Point(69, 20);
-            this.rules_tocount_edit.Name = "rules_tocount_edit";
-            this.rules_tocount_edit.Size = new System.Drawing.Size(18, 20);
-            this.rules_tocount_edit.TabIndex = 0;
-            this.rules_tocount_edit.Text = "5";
-            // 
-            // rules_fromlength_edit
-            // 
-            this.rules_fromlength_edit.Location = new System.Drawing.Point(22, 43);
-            this.rules_fromlength_edit.Name = "rules_fromlength_edit";
-            this.rules_fromlength_edit.Size = new System.Drawing.Size(18, 20);
-            this.rules_fromlength_edit.TabIndex = 0;
-            this.rules_fromlength_edit.Text = "5";
-            // 
-            // rules_fromcount_edit
-            // 
-            this.rules_fromcount_edit.Location = new System.Drawing.Point(22, 20);
-            this.rules_fromcount_edit.Name = "rules_fromcount_edit";
-            this.rules_fromcount_edit.Size = new System.Drawing.Size(18, 20);
-            this.rules_fromcount_edit.TabIndex = 0;
-            this.rules_fromcount_edit.Text = "5";
-            // 
-            // grammatic_auto_type
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.Check_Grammar_Button_Clear);
             this.tabPage3.Controls.Add(this.Check_Grammar_Check_EnterManual);
             this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_EnterManual);
             this.tabPage3.Controls.Add(this.Check_Grammar_RichBox_Result);
@@ -391,6 +146,7 @@
             // 
             this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
             this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
+            this.Check_Grammar_RichBox_Folder.ReadOnly = true;
             this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
             this.Check_Grammar_RichBox_Folder.TabIndex = 3;
             this.Check_Grammar_RichBox_Folder.Text = "";
@@ -427,6 +183,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Chain_Builder_Button_Clear);
             this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_EnterManual);
             this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Result);
             this.tabPage2.Controls.Add(this.Chain_Builder_RichBox_Folder);
@@ -830,12 +587,6 @@
             this.rules_count_label.Text = "Кол-во правил для каждого нетерминала";
             // 
             // rule_tolength_edit
-            this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
-            this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
-            this.Check_Grammar_RichBox_Folder.ReadOnly = true;
-            this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
-            this.Check_Grammar_RichBox_Folder.TabIndex = 3;
-            this.Check_Grammar_RichBox_Folder.Text = "";
             // 
             this.rule_tolength_edit.Location = new System.Drawing.Point(69, 43);
             this.rule_tolength_edit.Name = "rule_tolength_edit";
@@ -877,6 +628,27 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(844, 274);
             this.tabControl1.TabIndex = 8;
+            // 
+            // Chain_Builder_Button_Clear
+            // 
+            this.Chain_Builder_Button_Clear.Location = new System.Drawing.Point(729, 219);
+            this.Chain_Builder_Button_Clear.Name = "Chain_Builder_Button_Clear";
+            this.Chain_Builder_Button_Clear.Size = new System.Drawing.Size(75, 23);
+            this.Chain_Builder_Button_Clear.TabIndex = 8;
+            this.Chain_Builder_Button_Clear.Text = "Очистить";
+            this.Chain_Builder_Button_Clear.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Clear.Visible = false;
+            this.Chain_Builder_Button_Clear.Click += new System.EventHandler(this.Chain_Builder_Button_Clear_Click);
+            // 
+            // Check_Grammar_Button_Clear
+            // 
+            this.Check_Grammar_Button_Clear.Location = new System.Drawing.Point(729, 219);
+            this.Check_Grammar_Button_Clear.Name = "Check_Grammar_Button_Clear";
+            this.Check_Grammar_Button_Clear.Size = new System.Drawing.Size(75, 23);
+            this.Check_Grammar_Button_Clear.TabIndex = 7;
+            this.Check_Grammar_Button_Clear.Text = "Очистить";
+            this.Check_Grammar_Button_Clear.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Button_Clear.Click += new System.EventHandler(this.Check_Grammar_Button_Clear_Click);
             // 
             // GeneratorForm
             // 
@@ -958,6 +730,8 @@
         private System.Windows.Forms.TextBox rules_fromlength_edit;
         private System.Windows.Forms.TextBox rules_fromcount_edit;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button Chain_Builder_Button_Clear;
+        private System.Windows.Forms.Button Check_Grammar_Button_Clear;
     }
 }
 

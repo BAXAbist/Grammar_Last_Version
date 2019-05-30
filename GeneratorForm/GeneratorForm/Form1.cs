@@ -187,8 +187,10 @@ namespace GeneratorForm
                 file.Close();
                 Chain_Builder_RichBox_Folder.Text = dial.FileName;
                 Chain_Builder_from_Folder_in_TextBox();
+                Chain_Builder_Check_EnterManual.Visible = false;
                 Check_Grammar_RichBox_Folder.Text = dial.FileName;
                 Check_Grammar_from_Folder_in_TextBox();
+                Check_Grammar_Check_EnterManual.Visible = false;
             }
         }
 
@@ -284,6 +286,8 @@ namespace GeneratorForm
             else
                 Chain_Builder_RichBox_Result.Text = "Неправильный ввод грамматики";
             Chain_Builder_Button_SaveFile.Visible=true;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         OpenFileDialog OpenFile = new OpenFileDialog();
@@ -298,12 +302,16 @@ namespace GeneratorForm
                 FileStream f = new FileStream(FileName, FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(f);
                 Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
+                Chain_Builder_Check_EnterManual.Visible = false;
             }
         }
 
         private void Chain_Builder_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
+            Chain_Builder_Button_Clear.Visible = true;
             Chain_Builder_RichBox_EnterManual.Visible = true;
+            Chain_Builder_RichBox_Folder.Visible = !Chain_Builder_Check_EnterManual.Checked;
+            Chain_Builder_Button_Folder.Visible = !Chain_Builder_Check_EnterManual.Checked;
         }
 
         private void Chain_Builder_Button_Help_Click(object sender, EventArgs e)
@@ -323,6 +331,12 @@ namespace GeneratorForm
             FileStream f = new FileStream(Chain_Builder_RichBox_Folder.Text, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(f);
             Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
+        }
+
+        private void Chain_Builder_Button_Clear_Click(object sender, EventArgs e)
+        {
+            Chain_Builder_RichBox_EnterManual.Clear();
+            Chain_Builder_RichBox_Result.Clear();
         }
 
         //Все функции для страницы с анализатором грамматик
@@ -348,12 +362,23 @@ namespace GeneratorForm
             f.Show();
         }
 
-        
+        private void Check_Grammar_Button_Clear_Click(object sender, EventArgs e)
+        {
+            Check_Grammar_RichBox_EnterManual.Clear();
+            Check_Grammar_RichBox_Result.Clear();
+        }
+        //private void Check_Grammar_RichBox_Result_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
 
         private void Check_Grammar_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
-            //Check_Grammar_RichBox_EnterManual.Clear();
-            Check_Grammar_RichBox_EnterManual.Visible = Check_Grammar_Check_EnterManual.Checked;
+            Check_Grammar_Button_Folder.Visible = !Check_Grammar_Check_EnterManual.Checked;
+            Check_Grammar_RichBox_Folder.Visible = !Check_Grammar_Check_EnterManual.Checked;
+            Check_Grammar_Button_Clear.Visible = true;
+            Check_Grammar_RichBox_EnterManual.Visible = true;
         }
 
         private void Check_Grammar_Button_Folder_Click(object sender, EventArgs e)
@@ -366,6 +391,7 @@ namespace GeneratorForm
                 StreamReader reader = new StreamReader(f);
                 Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
                 Check_Grammar_RichBox_EnterManual.Visible = true;
+                Check_Grammar_Check_EnterManual.Visible = false;
             }
         }
 
