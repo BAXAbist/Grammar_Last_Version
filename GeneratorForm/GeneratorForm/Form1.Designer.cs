@@ -89,9 +89,7 @@
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-<<<<<<< HEAD
             // openFileDialog1
-=======
             // grammatic_type
             // 
             this.grammatic_type.Controls.Add(this.type_natural);
@@ -340,7 +338,6 @@
             this.rules_fromcount_edit.Text = "5";
             // 
             // grammatic_auto_type
->>>>>>> master
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
@@ -832,16 +829,13 @@
             this.rules_count_label.TabIndex = 2;
             this.rules_count_label.Text = "Кол-во правил для каждого нетерминала";
             // 
-<<<<<<< HEAD
             // rule_tolength_edit
-=======
             this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
             this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
             this.Check_Grammar_RichBox_Folder.ReadOnly = true;
             this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
             this.Check_Grammar_RichBox_Folder.TabIndex = 3;
             this.Check_Grammar_RichBox_Folder.Text = "";
->>>>>>> master
             // 
             this.rule_tolength_edit.Location = new System.Drawing.Point(69, 43);
             this.rule_tolength_edit.Name = "rule_tolength_edit";
