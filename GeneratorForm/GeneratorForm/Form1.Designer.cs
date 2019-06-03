@@ -31,6 +31,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Check_Grammar_Button_Clear = new System.Windows.Forms.Button();
             this.Check_Grammar_Check_EnterManual = new System.Windows.Forms.CheckBox();
             this.Check_Grammar_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
             this.Check_Grammar_RichBox_Result = new System.Windows.Forms.RichTextBox();
@@ -39,6 +40,7 @@
             this.CheckBox_Button_Help = new System.Windows.Forms.Button();
             this.Check_Grammar_Button_Check = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Chain_Builder_Button_Clear = new System.Windows.Forms.Button();
             this.Chain_Builder_RichBox_EnterManual = new System.Windows.Forms.RichTextBox();
             this.Chain_Builder_RichBox_Result = new System.Windows.Forms.RichTextBox();
             this.Chain_Builder_RichBox_Folder = new System.Windows.Forms.RichTextBox();
@@ -79,8 +81,6 @@
             this.rules_fromlength_edit = new System.Windows.Forms.TextBox();
             this.rules_fromcount_edit = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Chain_Builder_Button_Clear = new System.Windows.Forms.Button();
-            this.Check_Grammar_Button_Clear = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -111,6 +111,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Анализатор";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Check_Grammar_Button_Clear
+            // 
+            this.Check_Grammar_Button_Clear.Location = new System.Drawing.Point(729, 219);
+            this.Check_Grammar_Button_Clear.Name = "Check_Grammar_Button_Clear";
+            this.Check_Grammar_Button_Clear.Size = new System.Drawing.Size(75, 23);
+            this.Check_Grammar_Button_Clear.TabIndex = 7;
+            this.Check_Grammar_Button_Clear.Text = "Очистить";
+            this.Check_Grammar_Button_Clear.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Button_Clear.Visible = false;
+            this.Check_Grammar_Button_Clear.Click += new System.EventHandler(this.Check_Grammar_Button_Clear_Click);
             // 
             // Check_Grammar_Check_EnterManual
             // 
@@ -199,6 +210,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Составитель";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Chain_Builder_Button_Clear
+            // 
+            this.Chain_Builder_Button_Clear.Location = new System.Drawing.Point(729, 219);
+            this.Chain_Builder_Button_Clear.Name = "Chain_Builder_Button_Clear";
+            this.Chain_Builder_Button_Clear.Size = new System.Drawing.Size(75, 23);
+            this.Chain_Builder_Button_Clear.TabIndex = 8;
+            this.Chain_Builder_Button_Clear.Text = "Очистить";
+            this.Chain_Builder_Button_Clear.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Clear.Visible = false;
+            this.Chain_Builder_Button_Clear.Click += new System.EventHandler(this.Chain_Builder_Button_Clear_Click);
             // 
             // Chain_Builder_RichBox_EnterManual
             // 
@@ -628,27 +650,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(844, 274);
             this.tabControl1.TabIndex = 8;
-            // 
-            // Chain_Builder_Button_Clear
-            // 
-            this.Chain_Builder_Button_Clear.Location = new System.Drawing.Point(729, 219);
-            this.Chain_Builder_Button_Clear.Name = "Chain_Builder_Button_Clear";
-            this.Chain_Builder_Button_Clear.Size = new System.Drawing.Size(75, 23);
-            this.Chain_Builder_Button_Clear.TabIndex = 8;
-            this.Chain_Builder_Button_Clear.Text = "Очистить";
-            this.Chain_Builder_Button_Clear.UseVisualStyleBackColor = true;
-            this.Chain_Builder_Button_Clear.Visible = false;
-            this.Chain_Builder_Button_Clear.Click += new System.EventHandler(this.Chain_Builder_Button_Clear_Click);
-            // 
-            // Check_Grammar_Button_Clear
-            // 
-            this.Check_Grammar_Button_Clear.Location = new System.Drawing.Point(729, 219);
-            this.Check_Grammar_Button_Clear.Name = "Check_Grammar_Button_Clear";
-            this.Check_Grammar_Button_Clear.Size = new System.Drawing.Size(75, 23);
-            this.Check_Grammar_Button_Clear.TabIndex = 7;
-            this.Check_Grammar_Button_Clear.Text = "Очистить";
-            this.Check_Grammar_Button_Clear.UseVisualStyleBackColor = true;
-            this.Check_Grammar_Button_Clear.Click += new System.EventHandler(this.Check_Grammar_Button_Clear_Click);
             // 
             // GeneratorForm
             // 

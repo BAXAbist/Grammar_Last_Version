@@ -279,6 +279,9 @@ namespace GeneratorForm
 
         private void Chain_Builder_Button_Compile_Click(object sender, EventArgs e)
         {
+            while (Chain_Builder_RichBox_EnterManual.Text.IndexOf("\n\n") > -1)
+                Chain_Builder_RichBox_EnterManual.Text = Chain_Builder_RichBox_EnterManual.Text.Replace("\n\n", "\n");
+            Chain_Builder_RichBox_EnterManual.Text = Chain_Builder_RichBox_EnterManual.Text.Replace(" ", "");
             string[] str = Chain_Builder_RichBox_EnterManual.Text.Split('\n');
             bool f = errHand.CheckGramm(str);
             if (f)
@@ -299,6 +302,7 @@ namespace GeneratorForm
                 Chain_Builder_RichBox_Folder.Text = OpenFile.FileName;
                 string FileName = Chain_Builder_RichBox_Folder.Text;
                 Chain_Builder_RichBox_EnterManual.Visible = true;
+                Chain_Builder_Button_Clear.Visible = true;
                 FileStream f = new FileStream(FileName, FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(f);
                 Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
@@ -343,6 +347,9 @@ namespace GeneratorForm
 
         private void Check_Grammar_Button_Check_Click(object sender, EventArgs e)
         {
+            while (Check_Grammar_RichBox_EnterManual.Text.IndexOf("\n\n") < -1)
+                Check_Grammar_RichBox_EnterManual.Text.Replace("\n\n", "\n");
+            Check_Grammar_RichBox_EnterManual.Text = Check_Grammar_RichBox_EnterManual.Text.Replace(" ", "");
             string[] str = Check_Grammar_RichBox_EnterManual.Text.Split('\n');
             bool f = errHand.CheckGramm(str);
             if (f)
@@ -391,6 +398,7 @@ namespace GeneratorForm
                 StreamReader reader = new StreamReader(f);
                 Check_Grammar_RichBox_EnterManual.Text = reader.ReadToEnd();
                 Check_Grammar_RichBox_EnterManual.Visible = true;
+                Check_Grammar_Button_Clear.Visible = true;
                 Check_Grammar_Check_EnterManual.Visible = false;
             }
         }

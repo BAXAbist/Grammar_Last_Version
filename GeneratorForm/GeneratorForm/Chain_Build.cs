@@ -32,7 +32,8 @@ namespace Chain_Build
             string res_in_step = "S";
             string s;
             string result = res_in_step;
-            while ((s = KeyCheck(res_in_step, keyValues)) != "")
+            int count = 0;
+            while (((s = KeyCheck(res_in_step, keyValues)) != "")&&(count < 145))
             {
                 int index = rand.Next(keyValues[s].Length);
                 string kek = keyValues[s][index];
@@ -46,7 +47,10 @@ namespace Chain_Build
                     result = "Fatal error";
                     break;
                 }
+                count++;
             }
+            if (count == 145)
+                result = "Fatal error1";
             return result;
         }
 

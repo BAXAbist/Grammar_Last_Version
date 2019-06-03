@@ -17,10 +17,12 @@ namespace ErrorHandler
 
         public bool CheckGramm(string[] masStr)
         {
-            for (int i = 0; i < masStr.Length; i++) 
+            if (masStr[0] == "")
+                return false;
+            for (int i = 0; i < masStr.Length; i++)
             {
-                if (!CheckString(masStr[i]))
-                    return false;
+                    if (!CheckString(masStr[i]))
+                        return false;
             }
             return true;
         }
