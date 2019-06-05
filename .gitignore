@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+test1\.txt
+
+test2\.txt
+
+test3\.txt

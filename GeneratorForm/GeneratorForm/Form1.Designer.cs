@@ -126,7 +126,7 @@
             // Check_Grammar_Check_EnterManual
             // 
             this.Check_Grammar_Check_EnterManual.AutoSize = true;
-            this.Check_Grammar_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
+            this.Check_Grammar_Check_EnterManual.Location = new System.Drawing.Point(6, 117);
             this.Check_Grammar_Check_EnterManual.Name = "Check_Grammar_Check_EnterManual";
             this.Check_Grammar_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
             this.Check_Grammar_Check_EnterManual.TabIndex = 6;
@@ -149,13 +149,13 @@
             this.Check_Grammar_RichBox_Result.Location = new System.Drawing.Point(6, 171);
             this.Check_Grammar_RichBox_Result.Name = "Check_Grammar_RichBox_Result";
             this.Check_Grammar_RichBox_Result.ReadOnly = true;
-            this.Check_Grammar_RichBox_Result.Size = new System.Drawing.Size(458, 46);
+            this.Check_Grammar_RichBox_Result.Size = new System.Drawing.Size(464, 46);
             this.Check_Grammar_RichBox_Result.TabIndex = 4;
             this.Check_Grammar_RichBox_Result.Text = "";
             // 
             // Check_Grammar_RichBox_Folder
             // 
-            this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
+            this.Check_Grammar_RichBox_Folder.Location = new System.Drawing.Point(6, 78);
             this.Check_Grammar_RichBox_Folder.Name = "Check_Grammar_RichBox_Folder";
             this.Check_Grammar_RichBox_Folder.ReadOnly = true;
             this.Check_Grammar_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
@@ -164,7 +164,7 @@
             // 
             // Check_Grammar_Button_Folder
             // 
-            this.Check_Grammar_Button_Folder.Location = new System.Drawing.Point(309, 117);
+            this.Check_Grammar_Button_Folder.Location = new System.Drawing.Point(308, 117);
             this.Check_Grammar_Button_Folder.Name = "Check_Grammar_Button_Folder";
             this.Check_Grammar_Button_Folder.Size = new System.Drawing.Size(162, 23);
             this.Check_Grammar_Button_Folder.TabIndex = 2;
@@ -190,6 +190,7 @@
             this.Check_Grammar_Button_Check.TabIndex = 0;
             this.Check_Grammar_Button_Check.Text = "Проверить";
             this.Check_Grammar_Button_Check.UseVisualStyleBackColor = true;
+            this.Check_Grammar_Button_Check.Visible = false;
             this.Check_Grammar_Button_Check.Click += new System.EventHandler(this.Check_Grammar_Button_Check_Click);
             // 
             // tabPage2
@@ -238,13 +239,13 @@
             this.Chain_Builder_RichBox_Result.Location = new System.Drawing.Point(6, 171);
             this.Chain_Builder_RichBox_Result.Name = "Chain_Builder_RichBox_Result";
             this.Chain_Builder_RichBox_Result.ReadOnly = true;
-            this.Chain_Builder_RichBox_Result.Size = new System.Drawing.Size(458, 46);
+            this.Chain_Builder_RichBox_Result.Size = new System.Drawing.Size(464, 46);
             this.Chain_Builder_RichBox_Result.TabIndex = 6;
             this.Chain_Builder_RichBox_Result.Text = "";
             // 
             // Chain_Builder_RichBox_Folder
             // 
-            this.Chain_Builder_RichBox_Folder.Location = new System.Drawing.Point(7, 78);
+            this.Chain_Builder_RichBox_Folder.Location = new System.Drawing.Point(6, 78);
             this.Chain_Builder_RichBox_Folder.Name = "Chain_Builder_RichBox_Folder";
             this.Chain_Builder_RichBox_Folder.ReadOnly = true;
             this.Chain_Builder_RichBox_Folder.Size = new System.Drawing.Size(464, 33);
@@ -254,7 +255,7 @@
             // Chain_Builder_Check_EnterManual
             // 
             this.Chain_Builder_Check_EnterManual.AutoSize = true;
-            this.Chain_Builder_Check_EnterManual.Location = new System.Drawing.Point(7, 117);
+            this.Chain_Builder_Check_EnterManual.Location = new System.Drawing.Point(6, 117);
             this.Chain_Builder_Check_EnterManual.Name = "Chain_Builder_Check_EnterManual";
             this.Chain_Builder_Check_EnterManual.Size = new System.Drawing.Size(106, 17);
             this.Chain_Builder_Check_EnterManual.TabIndex = 4;
@@ -270,6 +271,7 @@
             this.Chain_Builder_Button_Compile.TabIndex = 3;
             this.Chain_Builder_Button_Compile.Text = "Составить";
             this.Chain_Builder_Button_Compile.UseVisualStyleBackColor = true;
+            this.Chain_Builder_Button_Compile.Visible = false;
             this.Chain_Builder_Button_Compile.Click += new System.EventHandler(this.Chain_Builder_Button_Compile_Click);
             // 
             // Chain_Builder_Button_SaveFile
@@ -295,7 +297,7 @@
             // 
             // Chain_Builder_Button_Folder
             // 
-            this.Chain_Builder_Button_Folder.Location = new System.Drawing.Point(309, 117);
+            this.Chain_Builder_Button_Folder.Location = new System.Drawing.Point(308, 117);
             this.Chain_Builder_Button_Folder.Name = "Chain_Builder_Button_Folder";
             this.Chain_Builder_Button_Folder.Size = new System.Drawing.Size(162, 23);
             this.Chain_Builder_Button_Folder.TabIndex = 0;

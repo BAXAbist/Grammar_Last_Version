@@ -188,9 +188,14 @@ namespace GeneratorForm
                 Chain_Builder_RichBox_Folder.Text = dial.FileName;
                 Chain_Builder_from_Folder_in_TextBox();
                 Chain_Builder_Check_EnterManual.Visible = false;
+                Chain_Builder_Button_Clear.Visible = true;
+                Chain_Builder_Button_Compile.Visible = true;
+
                 Check_Grammar_RichBox_Folder.Text = dial.FileName;
                 Check_Grammar_from_Folder_in_TextBox();
                 Check_Grammar_Check_EnterManual.Visible = false;
+                Check_Grammar_Button_Clear.Visible = true;
+                Check_Grammar_Button_Check.Visible = true;
             }
         }
 
@@ -307,6 +312,7 @@ namespace GeneratorForm
                 StreamReader reader = new StreamReader(f);
                 Chain_Builder_RichBox_EnterManual.Text = reader.ReadToEnd();
                 Chain_Builder_Check_EnterManual.Visible = false;
+                Chain_Builder_Button_Compile.Visible = true;
             }
         }
 
@@ -314,6 +320,7 @@ namespace GeneratorForm
         {
             Chain_Builder_Button_Clear.Visible = true;
             Chain_Builder_RichBox_EnterManual.Visible = true;
+            Chain_Builder_Button_Compile.Visible = true;
             Chain_Builder_RichBox_Folder.Visible = !Chain_Builder_Check_EnterManual.Checked;
             Chain_Builder_Button_Folder.Visible = !Chain_Builder_Check_EnterManual.Checked;
         }
@@ -341,6 +348,8 @@ namespace GeneratorForm
         {
             Chain_Builder_RichBox_EnterManual.Clear();
             Chain_Builder_RichBox_Result.Clear();
+            Chain_Builder_RichBox_Folder.Clear();
+            Chain_Builder_Button_SaveFile.Visible = false;
         }
 
         //Все функции для страницы с анализатором грамматик
@@ -373,12 +382,8 @@ namespace GeneratorForm
         {
             Check_Grammar_RichBox_EnterManual.Clear();
             Check_Grammar_RichBox_Result.Clear();
+            Check_Grammar_RichBox_Folder.Clear();
         }
-        //private void Check_Grammar_RichBox_Result_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
 
         private void Check_Grammar_Check_EnterManual_CheckedChanged(object sender, EventArgs e)
         {
@@ -386,6 +391,7 @@ namespace GeneratorForm
             Check_Grammar_RichBox_Folder.Visible = !Check_Grammar_Check_EnterManual.Checked;
             Check_Grammar_Button_Clear.Visible = true;
             Check_Grammar_RichBox_EnterManual.Visible = true;
+            Check_Grammar_Button_Check.Visible = true;
         }
 
         private void Check_Grammar_Button_Folder_Click(object sender, EventArgs e)
@@ -400,6 +406,7 @@ namespace GeneratorForm
                 Check_Grammar_RichBox_EnterManual.Visible = true;
                 Check_Grammar_Button_Clear.Visible = true;
                 Check_Grammar_Check_EnterManual.Visible = false;
+                Check_Grammar_Button_Check.Visible = true;
             }
         }
 
